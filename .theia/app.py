@@ -13,6 +13,16 @@ def index():
 def exercises():
     return render_template('exercises.html')
 
+# opens stats.html
+@app.route('/stats')
+def stats():
+    return render_template('stats.html')
+
+#opens contact.html
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 # opens port for browser
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
