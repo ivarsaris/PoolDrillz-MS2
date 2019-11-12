@@ -1,12 +1,13 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'pooldrillz'
-app.config["MONGO_URI"] = 'mongodb+srv://ivars:@cluster0-q4qh1.mongodb.net/pooldrillz?retryWrites=true&w=majority'
+# storing MongoDB uri and database name in variables
+app.config['MONGO_DBNAME'] = 'pooldrillz'
+app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
@@ -29,6 +30,18 @@ def stats():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+# opens add.html
+@app.route('/add')
+def add():
+    return render_template('add.html')
+
+# add task to database with submit button
+@app.route('/add', methods=['POST'])
+def submit_exercise():
+    exercises = mongo.db.exercises
+    exercises.insert_one(request.form.to_dict())
+    return redirect(url_for('exercises'))
 
 
 # opens port for browser

@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Exercises</h1>
+<div class="container">
+	<h1>Exercises</h1>
 
-{% for exercise in exercises %}
-    {{exercise.name}}
-    {{exercise.description}}
-    {{exercise.type_of_exercise}}
-    {{exercise.skill_level}}
-    {{exercise.exercise_added_by}}
-{% endfor %}
+	<h4>Add your own exercise to the database</h4>
+	<a href={{ url_for('add') }} class="waves-effect waves-light btn">Add exercise</a>
+
+	{% for exercise in exercises %}
+	    <h5>Exercise name</h5> {{exercise.name}}
+	    <h5>Exercise description</h5> {{exercise.description}}
+	    <h5>Type of exercise</h5> {{exercise.type_of_exercise}}
+	    <h5>Skill level</h5> {{exercise.skill_level}}
+	    <h5>Exercise added by</h5> {{exercise.exercise_added_by}}
+	{% endfor %}
+</div>
 
 {% endblock %}
