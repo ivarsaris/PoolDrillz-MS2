@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
 	<div class="navbar-fixed">
 		<nav>
 			<div class="nav-wrapper">
@@ -20,7 +19,7 @@
 					<li><a href={{ url_for('index') }}>Home</a></li>
 					<li><a href={{ url_for('exercises') }}>Exercises</a></li>
 					<li><a href={{ url_for('stats') }}>Statistics</a></li>
-                    <li><a href={{ url_for('contact') }}>Contact</a></li>
+					<li><a href={{ url_for('contact') }}>Contact</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -32,8 +31,17 @@
 
 	<!--JavaScript-->
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-    <!-- jquery CDN -->
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<!-- jquery CDN -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Materialize javascript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<!--jQuery to initialize select element in form-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+	        $('select').material_select();
+	});
+	</script>
 </body>
 
 </html>
