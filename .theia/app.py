@@ -37,7 +37,7 @@ def add():
     return render_template('add.html')
 
 # add task to database with submit button
-@app.route('/add', methods=['POST'])
+@app.route('/submit_exercise', methods=['POST'])
 def submit_exercise():
     exercises = mongo.db.exercises
     exercises.insert_one(request.form.to_dict())
