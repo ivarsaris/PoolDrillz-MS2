@@ -5,6 +5,9 @@
 <h5>Type of exercise</h5> {{exercise.type_of_exercise}}
 <h5>Skill level</h5> {{exercise.skill_level}}
 <h5>Exercise added by</h5> {{exercise.exercise_added_by}}
-<a href="{{url_for('edit_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">Edit exercise</a>
+<div class="row">
+	<a href="{{url_for('edit_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">Edit
+		exercise</a>
+</div>
 
 {% endblock %}
