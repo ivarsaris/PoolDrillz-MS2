@@ -35,7 +35,7 @@ def contact():
 @app.route('/add')
 def add():
     return render_template('add.html')
-  
+
 # add exercise to database
 @app.route('/submit_exercise', methods=['POST'])
 def submit_exercise():
@@ -54,6 +54,20 @@ def view_exercise(exercise_id):
 def edit_exercise(exercise_id):
     the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
     return render_template('editexercise.html', exercise=the_exercise)
+
+
+@app.route('/update_exercise/<exercise_id>', methods=["POST"])
+def update_exercise(exercise_id):
+    exercises = mongo.db.exercises
+    exercises.update({'_id': ObjectId(exercise_id)},
+    {
+        'name': request.form.get('name'),
+        'description': request.form.get('description'),
+        'type_of_exercise': request.form.get('type_of_exercise'),
+        'skill_level': request.form.get('skill_level'),
+        'exercise_added_by': request.form.get('exercise_added_by'),
+    })
+    return redirect(url_for('exercises'))
 
 
 # opens port for browser
