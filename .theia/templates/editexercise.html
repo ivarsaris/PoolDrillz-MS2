@@ -74,5 +74,11 @@
 					</div>
 				</div>
 	</form>
+	<div class="col s12">
+		<h3>Danger Zone!</h3>
+		<a href="{{url_for('delete_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn red">Delete
+			exercise</a>
+	</div>
+
 </div>
 {% endblock %}

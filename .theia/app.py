@@ -55,7 +55,7 @@ def edit_exercise(exercise_id):
     the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
     return render_template('editexercise.html', exercise=the_exercise)
 
-
+# updates exercise in database with form in editexercise.html
 @app.route('/update_exercise/<exercise_id>', methods=["POST"])
 def update_exercise(exercise_id):
     exercises = mongo.db.exercises
@@ -67,6 +67,14 @@ def update_exercise(exercise_id):
         'skill_level': request.form.get('skill_level'),
         'exercise_added_by': request.form.get('exercise_added_by'),
     })
+    return redirect(url_for('exercises'))
+
+# deletes exercise from database with button in editexercise.html
+@app.route('/delete_exercise/<exercise_id>')
+def delete_exercise(exercise_id):
+    exercises = mongo.db.exercises
+    exercises.remove({'_id': ObjectId(exercise_id)
+                    })
     return redirect(url_for('exercises'))
 
 
