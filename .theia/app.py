@@ -35,13 +35,25 @@ def contact():
 @app.route('/add')
 def add():
     return render_template('add.html')
-
-# add task to database with submit button
+  
+# add exercise to database
 @app.route('/submit_exercise', methods=['POST'])
 def submit_exercise():
     exercises = mongo.db.exercises
     exercises.insert_one(request.form.to_dict())
     return redirect(url_for('exercises'))
+
+# opens exercise in view_exercise.html with button in exercises.html
+@app.route('/view_exercise/<exercise_id>')
+def view_exercise(exercise_id):
+    the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
+    return render_template('viewexercise.html', exercise=the_exercise)
+
+# opens editexercise.html with 'edit exercise' button in viewexercise.html
+@app.route('/edit_exercise/<exercise_id>')
+def edit_exercise(exercise_id):
+    the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
+    return render_template('editexercise.html', exercise=the_exercise)
 
 
 # opens port for browser
