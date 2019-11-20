@@ -2,6 +2,9 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from base64 import b64encode
+import base64
+
 
 app = Flask(__name__)
 
@@ -32,35 +35,34 @@ def add():
 # add exercise to database
 @app.route('/submit_exercise', methods=['POST'])
 def submit_exercise():
-    # check if an image file has been addded
-    if 'image' in request.files:
-        # store image input in form in variable
-        image = request.files['image']
-        # save image to exercises database
-        mongo.save_file(image.filename, image)
-    # define the documents in the database(the exercises)
+    # get image from form
+    image = request.files['image']
+    # turn image into string
+    image_string = base64.b64encode(image.read()).decode("utf-8")
+    # saves values in variable
+    values = request.form.to_dict()
+    # turn type_of_exercise value to list so it can store multiple inputs
+    values["type_of_exercise"] = request.form.getlist("type_of_exercise")
+    # encode image string to save in mongo
+    values["image"] = "data:image/png;base64," + image_string
+    # define mongo database
     exercises = mongo.db.exercises
     # insert document in database with button in add.html
-    exercises.insert_one(request.form.to_dict())
-    # redirect to exercises page after adding exercise to database
+    exercises.insert_one(values)
+    # return to exercises page
     return redirect(url_for('exercises'))
 
-# function to be able to show image in webpage
-@app.route('/file/<filename>')
-def file(filename):
-    return mongo.send_file(filename)
 
 # exercises.html
-
 
 @app.route('/exercises')
 def exercises():
     # define exercises as all exercises in mongo collection
     exercises = mongo.db.exercises.find()
-    # define specific exercise
-    # exercise = mongo.db.exercises.find_one({'name': name})
     # opens exercises page with exercises defined
     return render_template('exercises.html', exercises=exercises)
+
+# viewexercise.html
 
 
 @app.route('/view_exercise/<exercise_id>')
@@ -70,15 +72,16 @@ def view_exercise(exercise_id):
     # opens exercise in view_exercise.html with button in exercises.html
     return render_template('viewexercise.html', exercise=the_exercise)
 
-# viewexercise.html
+# editexercise.html
 
 # opens editexercise.html with 'edit exercise' button in viewexercise.html
 @app.route('/edit_exercise/<exercise_id>')
 def edit_exercise(exercise_id):
+    # define specific exercise with its Mongo ID
     the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
+    # return edit template with info of the exercise filled out
     return render_template('editexercise.html', exercise=the_exercise)
 
-# editexercise.html
 
 # route for update exercise function
 @app.route('/update_exercise/<exercise_id>', methods=["POST"])
