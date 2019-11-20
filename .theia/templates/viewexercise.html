@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>{{exercise.name}}</h1>
+<img class="small-img" src="{{exercise.image}}">
 <h5>Exercise description</h5> {{exercise.description}}
 <h5>Type of exercise</h5> {{exercise.type_of_exercise}}
 <h5>Skill level</h5> {{exercise.skill_level}}

@@ -11,6 +11,7 @@
 	<h5>{{exercise.name}}</h5>
 	<h6><strong>Type of exercise</strong></h6> {{exercise.type_of_exercise}}
 	<h6><strong>Skill level</strong></h6> {{exercise.skill_level}}
+    <img class="small-img" src="{{exercise.image}}">
 	<div class="row">
 		<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">View whole
 			exercise</a>
