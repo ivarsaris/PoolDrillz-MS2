@@ -51,34 +51,39 @@
 		</div>
 		<div class="row">
 			<div class="file-field input-field">
-                <div class="btn waves-effect waves-light">
-                    Upload Image
-                    <input type="file" name="image">
+				<div class="btn waves-effect waves-light">
+					Upload Image<i class="material-icons right">file_upload</i>
+					<input type="file" name="image">
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text">
                 </div>
-            </div>
-        </div>
-		<div class="row">
-			<div class="input-field col s12">
-				<input id="date_added" name="date_added" type="text" class="validate">
-				<label for="date_added">Date(DD.MM.YYYY)</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<input id="exercise_added_by" name="exercise_added_by" type="text" class="validate">
-				<label for="exercise_added_by">Your name</label>
-			</div>
-		</div>
-		<div class="row">
-			<div>
-				<button class="btn waves-effect waves-light" type="submit">Add exercise to database
-                  <i class="material-icons right">send</i>
-                </button>
-			</div>
-		</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="date_added" name="date_added" type="text" class="validate">
+						<label for="date_added">Date(DD.MM.YYYY)</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="exercise_added_by" name="exercise_added_by" type="text" class="validate">
+						<label for="exercise_added_by">Your name</label>
+					</div>
+				</div>
+				<div class="row col s12 col m6 add-cancel-button">
+					<div>
+						<button class="btn waves-effect waves-light" type="submit">Add exercise to database
+                  <i class="material-icons right">send</i></button>
+					</div>
+				</div>
+				<div class="row col s12 col m6 add-cancel-button">
+					<div>
+						<a
+							href={{ url_for('exercises') }}><button class="btn waves-effect waves-light red" type="submit">Cancel<i class="material-icons right">cancel</i></button></a>
+					</div>
+				</div>
 	</form>
 </div>
 {% endblock %}
