@@ -7,7 +7,7 @@
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<!-- own css -->
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -21,7 +21,7 @@
 					<li><a href={{ url_for('index') }}>Home</a></li>
 					<li><a href={{ url_for('exercises') }}>Exercises</a></li>
 					<li><a href={{ url_for('stats') }}>Statistics</a></li>
-					<li><a href={{ url_for('contact') }}>Contact</a></li>
+					<li><a href={{ url_for('about') }}>About us</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -31,6 +31,21 @@
 		{% block content %}
 		{% endblock %}
 	</div>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">PoolDrillz</h5>
+					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2019 Ivar Saris
+			</div>
+		</div>
+	</footer>
 
 	<!--JavaScript-->
 	<script type="text/javascript" src="js/materialize.min.js"></script>
