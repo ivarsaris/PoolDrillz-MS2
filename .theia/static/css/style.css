@@ -1,12 +1,8 @@
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-main {
-    flex: 1 0 auto;
+img {
+    border: 1px #393a4c;
+    width: 60%;
+    height: auto;
 }
 
 nav .nav-wrapper {
@@ -64,17 +60,28 @@ nav .brand-logo {
     width: 272px;
 }
 
+.add-cancel-button .cancel-button {
+    background-color: red;
+}
+
+.add-cancel-button .cancel-button a {
+    color: white;
+}
+
 .page-footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 140px;
-    padding-top: 10px;
     background-color: #393a4c;
+    z-index: 1;
 }
 
 .page-footer .footer-copyright {
     min-height: 0;
     padding-top: 0;
+}
+
+.empty-container {
+    height: 200px;
 }

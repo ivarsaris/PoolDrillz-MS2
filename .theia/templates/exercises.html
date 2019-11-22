@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<h1>Exercises</h1>
-<div class="input-field">
-	<select id="type_of_exercise" name="type_of_exercise" multiple>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h1>Exercises</h1>
+			</div>
+			<div class="col s12 col m6 exercises-filter">
+				<div class="input-field">
+					<select id="type_of_exercise" name="type_of_exercise" multiple>
             <option value="" disabled selected>Choose type of exercise</option>
             <option value="Technique">Technique</option>
             <option value="Cue ball control">Cue ball control</option>
@@ -20,25 +25,39 @@
             <option value="Straight pool">Straight pool</option>
             <option value="Special skills">Special skills</option>
             -->
-        </select>
-	<label>What type of exercise are you looking for?</label>
-</div>
-
-<h5>Add your own exercise to the database</h5>
-<a href={{ url_for('add') }} class="waves-effect waves-light btn btn-add">Add
-	exercise<i class="material-icons right">add_box</i></button></a>
-
-{% for exercise in exercises %}
-<div class="col s12 col m6">
-	<h5>{{exercise.name}}</h5>
-	<h6><strong>Type of exercise</strong></h6>{{exercise.type_of_exercise}}
-	<h6><strong>Skill level</strong></h6> {{exercise.skill_level}}
-	<img class="small-img" src="{{exercise.image}}">
-	<div class="row">
-		<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">View whole
-			exercise<i class="material-icons right">pageview</i></button></a>
+                    </select>
+					<label>What type of exercise are you looking for?</label>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<h5>Add your own exercise to the database</h5>
+				<a href={{ url_for('add') }} class="waves-effect waves-light btn btn-add">Add
+					exercise<i class="material-icons right">add_box</i></button></a>
+			</div>
+		</div>
 	</div>
-</div>
-{% endfor %}
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			{% for exercise in exercises %}
+			<div class="col s12 col m6">
+				<h5>{{exercise.name}}</h5>
+				<h6><strong>Type of exercise</strong></h6>{{exercise.type_of_exercise}}
+				<h6><strong>Skill level</strong></h6> {{exercise.skill_level}}
+				<div class="row">
+					<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}"
+						class="waves-effect waves-light btn">View whole
+						exercise<i class="material-icons right">pageview</i></button></a>
+				</div>
+			</div>
+			<div class="col s12 col m6">
+				<img class="small-img" src="{{exercise.image}}">
+            </div>
+            {% endfor %}
+		</div>
+	</div>
+</section>
 
 {% endblock %}

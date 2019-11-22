@@ -31,40 +31,38 @@
 		</div>
 	</nav>
 	<!-- content to be copied to all pages -->
+
+	{% block content %}
+	{% endblock %}
+
 	<section>
-		<div class="container">
-			<div class="row">
-				{% block content %}
-				{% endblock %}
-			</div>
+		<div class="container empty-container">
 		</div>
 	</section>
-	<section>
-		<footer class="page-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 s6">
-						<h5 class="white-text">PoolDrillz</h5>
-						<p class="grey-text text-lighten-4">Created as a non profit project.</p>
-						<div class="footer-copyright">
-							<div>
-								© 2019 Ivar Saris
-							</div>
+
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col s6 l6">
+					<h5 class="white-text">PoolDrillz</h5>
+					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
+					<div class="footer-copyright">
+						<div>
+							© 2019 Ivar Saris
 						</div>
 					</div>
-					<div class="col l4 s6">
-						<ul>
-							<li><a class="grey-text text-lighten-3" href={{ url_for('index') }}>Home</a></li>
-							<li><a class="grey-text text-lighten-3" href={{ url_for('exercises') }}>Exercises</a></li>
-							<li><a class="grey-text text-lighten-3" href={{ url_for('stats') }}>Statistics</a></li>
-							<li><a class="grey-text text-lighten-3" href={{ url_for('about') }}>About us</a></li>
-						</ul>
-					</div>
+				</div>
+				<div class="col s6  l4 offset-l2">
+					<ul>
+						<li><a class="grey-text text-lighten-3" href={{ url_for('index') }}>Home</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for('exercises') }}>Exercises</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for('stats') }}>Statistics</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for('about') }}>About us</a></li>
+					</ul>
 				</div>
 			</div>
-		</footer>
-	</section>
-	</div>
+		</div>
+	</footer>
 
 	<!--JavaScript-->
 	<script type="text/javascript" src="js/materialize.min.js"></script>
