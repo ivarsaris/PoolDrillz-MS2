@@ -17,11 +17,10 @@
 		<div class="nav-wrapper">
 			<div class="row">
 				<div class="col m4">
-					<a href="#" class="brand-logo">PoolDrillz</a>
+					<a href={{ url_for('index') }} class="brand-logo">PoolDrillz</a>
 				</div>
 				<div class="col m8">
 					<ul id="nav-mobile" class="right hide-on-small-and-down">
-						<li><a href={{ url_for('index') }}>Home</a></li>
 						<li><a href={{ url_for('exercises') }}>Exercises</a></li>
 						<li><a href={{ url_for('stats') }}>Statistics</a></li>
 						<li><a href={{ url_for('about') }}>About us</a></li>
@@ -37,7 +36,6 @@
 
 	<section>
 		<div class="container empty-container">
-		</div>
 	</section>
 
 	<footer class="page-footer">
