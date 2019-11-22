@@ -3,23 +3,57 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    color: #393a4c;
 }
 
 main {
     flex: 1 0 auto;
 }
 
-.navbar_fixed {
-    background-color: #0875c3;
+nav .nav-wrapper {
+    background-color: #393a4c;
+}
+
+nav .brand-logo {
+    left: 20%;
+}
+
+@media only screen and (max-width: 492px) {
+    display: none;
+}
+
+.slider {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-bottom: 90px;
+    border: 1px solid #393a4c;
+}
+
+.slider .slides {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .slides img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.slider .slides li .caption {
+    color: #393a4c;
 }
 
 .btn {
     background-color: #0875c3;
+    width: 272px;
 }
 
 .btn-add {
     background-color: #393a4c;
+    width: 272px;
 }
 
 .statistics {
@@ -28,4 +62,19 @@ main {
 
 .add-cancel-button {
     width: 272px;
+}
+
+.page-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    padding-top: 10px;
+    background-color: #393a4c;
+}
+
+.page-footer .footer-copyright {
+    min-height: 0;
+    padding-top: 0;
 }
