@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from base64 import b64encode
+from bson.json_util import dumps, loads
 import base64
 
 
@@ -100,6 +101,7 @@ def update_exercise(exercise_id):
         'exercise_added_by': request.form.get('exercise_added_by'),
         'image': base64.b64encode(request.files['image'].read()).decode("utf-8")
     })
+    
     # redirect to exercises page after updating exercises
     return redirect(url_for('exercises'))
 
