@@ -62,11 +62,23 @@
                 <h4><i>Nameless exercise</i></h4>
                 {% endif %}
 				<h6><strong>Type of exercise</strong></h6>
+                {% if exercise.type_of_exercise %}
 				<p>{{exercise.type_of_exercise}}</p>
+                {% else %}
+                <p><i>No type of exercise known</i></p>
+                {% endif %}
 				<h6><strong>Skill level</strong></h6>
+                {% if exercise.skill_level %}
 				<p>{{exercise.skill_level}}</p>
+                {% else %}
+                <p><i>No skill level known</i></p>
+                {% endif %}
 				<div>
+                    {% if exercise.image %}
 					<img class="small-img" src="{{exercise.image}}">
+                    {% else %}
+                    <img class="small-img" src="/static/images/noimage.jpg">
+                    {% endif %}
                 </div>
 					<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">View whole exercise<i class="material-icons right">pageview</i></button></a>
 			</div>
