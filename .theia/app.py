@@ -63,6 +63,22 @@ def exercises():
     # opens exercises page with exercises defined
     return render_template('exercises.html', exercises=exercises)
 
+# route for filter exercises function
+@app.route('/filter_exercises',  methods=['POST'])
+# filter exercises function
+def filter_exercises():
+    exercises = mongo.db.exercises
+    type_filter = request.form.get('type_filter')
+    try:
+        doc = exercises.find({'type_of_exercise': type_filter})
+    except:
+        print("Error accessing database!")
+
+    if not doc:
+        print('No results found')
+
+    return render_template('exercises.html', doc=doc)
+
 # viewexercise.html
 
 
@@ -91,7 +107,7 @@ def update_exercise(exercise_id):
     exercises = mongo.db.exercises
     # add document to database with form
     exercises.update({'_id': ObjectId(exercise_id)},
-    {
+                     {
         # all variables to be filled out in the form
         'name': request.form.get('name'),
         'description': request.form.get('description'),
@@ -101,7 +117,7 @@ def update_exercise(exercise_id):
         'exercise_added_by': request.form.get('exercise_added_by'),
         'image': base64.b64encode(request.files['image'].read()).decode("utf-8")
     })
-    
+
     # redirect to exercises page after updating exercises
     return redirect(url_for('exercises'))
 
@@ -113,7 +129,7 @@ def delete_exercise(exercise_id):
     exercises = mongo.db.exercises
     # delete exercise from database with button
     exercises.remove({'_id': ObjectId(exercise_id)
-                    })
+                      })
     # open exercises page after deleting exercise
     return redirect(url_for('exercises'))
 
@@ -133,7 +149,7 @@ def stats():
     last_aded_exerc = exerc_sorted_date[0]
     # render template with the variables
     return render_template('stats.html', amount_of_exercises=amount_of_exercises,
-    last_aded_exerc=last_aded_exerc)
+                           last_aded_exerc=last_aded_exerc)
 
 
 # opens port for browser
