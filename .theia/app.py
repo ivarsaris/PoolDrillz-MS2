@@ -106,7 +106,7 @@ def update_exercise(exercise_id):
     # retrieve exercises from the database
     exercises = mongo.db.exercises
     # add document to database with form
-    exercises.update({'_id': ObjectId(exercise_id)},
+    exercises.update({"_id": ObjectId(exercise_id)},
                      {
         # all variables to be filled out in the form
         'name': request.form.get('name'),
@@ -128,7 +128,7 @@ def delete_exercise(exercise_id):
     # define exercises
     exercises = mongo.db.exercises
     # delete exercise from database with button
-    exercises.remove({'_id': ObjectId(exercise_id)
+    exercises.remove({"_id": ObjectId(exercise_id)
                       })
     # open exercises page after deleting exercise
     return redirect(url_for('exercises'))

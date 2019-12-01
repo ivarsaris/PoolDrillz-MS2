@@ -1,11 +1,3 @@
-
-img {
-    border: 1px #393a4c;
-    width: 400px;
-    max-width: 90%;
-    height: auto;
-}
-
 nav .nav-wrapper {
     background-color: #393a4c;
 }
@@ -14,33 +6,33 @@ nav .brand-logo {
     left: 20%;
 }
 
-@media only screen and (max-width: 492px) {
+/* @media only screen and (max-width: 492px) {
     display: none;
+} */
+
+.homepage-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 20px;
 }
 
-.slider {
-    width: 90%;
-    height: auto;
-    margin-left: 5%;
+.caption {
+    color: #393a4c;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.images {    
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    max-height: auto;
+    align: center;
     margin-bottom: 90px;
     border: 1px solid #393a4c;
-}
-
-.slider .slides {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.slider .slides img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-}
-
-.slider .slides li .caption {
-    color: #393a4c;
 }
 
 .btn {
