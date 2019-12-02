@@ -128,9 +128,14 @@
 			</div>
 		</div>
 		<div class="row">
+			{% if exercise.image %}
+			<img class="small-img" src="{{exercise.image}}">
+            {% else %}
+			<img class="small-img" src="/static/images/noimage.jpg">
+            {% endif %}
 			<div class="file-field input-field">
 				<div class="btn waves-effect waves-light">
-					Upload Image<i class="material-icons right">file_upload</i>
+					Change Image<i class="material-icons right">file_upload</i>
 					<input type="file" name="image" value="{{exercise.image}}">
                 </div>
 					<div class="file-path-wrapper">

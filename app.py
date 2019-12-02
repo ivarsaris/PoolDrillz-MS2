@@ -87,6 +87,7 @@ def filter_exercises():
 def view_exercise(exercise_id):
     # find the particular exercise in the database using its ID
     the_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
+    print(the_exercise)
     # opens exercise in view_exercise.html with button in exercises.html
     return render_template('viewexercise.html', exercise=the_exercise)
 
@@ -116,12 +117,20 @@ def update_exercise(exercise_id):
         'date_added': request.form.get('date_added'),
         'exercise_added_by': request.form.get('exercise_added_by')
         }
-    if 'image' in request.files:
+    existing_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
+    print(existing_exercise)
+    print('*********************')
+    print(request.files.to_dict())
+    # check if user oploaded a new image or not
+    if request.files['image'].filename != '':
         image = request.files['image']
          # turn image into string
         image_string = base64.b64encode(image.read()).decode("utf-8")
+        # save new image to database
         exercise['image'] = "data:image/png;base64," + image_string
-     # add document to database with form
+    else:
+        exercise['image'] = existing_exercise['image']
+    # add document to database with form
     exercises.update({"_id": ObjectId(exercise_id)}, exercise)
     # redirect to exercises page after updating exercises
     return redirect(url_for('exercises'))
