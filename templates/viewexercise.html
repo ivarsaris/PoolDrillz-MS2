@@ -9,7 +9,7 @@
             <h1>No exercise name given</h1>
             {% endif %}
 			{% if exercise.image %}
-			<img class="small-img" src="{{exercise.image}}">
+			<img class="small-img image-view" src="{{exercise.image}}">
             {% else %}
             <img class="small-img" src="/static/images/noimage.jpg">
             {% endif %}
@@ -21,7 +21,7 @@
             {% endif %}
 			<h5>Type of exercise</h5>
             {% if exercise.type_of_exercise %}
-            {{exercise.type_of_exercise}}
+            {{', '.join(exercise.type_of_exercise)}}
             {% else %}
             No type of exercise given
             {% endif %}

@@ -59,7 +59,7 @@
 	<div class="container">
 		<div class="row">
 			{% for exercise in exercises %}
-			<div class="col s12 l6">
+			<div class="col s12 l5 exercises-container">
 				{% if exercise.name %}
 				<h4>{{exercise.name}}</h4>
 				{% else %}
@@ -67,7 +67,7 @@
 				{% endif %}
 				<h6><strong>Type of exercise</strong></h6>
 				{% if exercise.type_of_exercise %}
-				<p>{{exercise.type_of_exercise}}</p>
+				<p>{{', '.join(exercise.type_of_exercise)}}</p>
 				{% else %}
 				<p><i>No type of exercise known</i></p>
 				{% endif %}
@@ -90,6 +90,8 @@
 				</div>
 				{% endfor %}
 			</div>
+        </div>
+	</div>
 </section>
 
 {% endblock %}

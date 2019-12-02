@@ -25,14 +25,25 @@ nav .brand-logo {
     transform: translate(-50%);
 }
 
+.exercises-container {
+    border: 1px #393a4c solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
 img {    
     width: 400px;
     height: 220px;
     max-width: 90%;
     max-height: auto;
     align: center;
-    margin-bottom: 90px;
-    border: 1px solid #393a4c;
+}
+
+.image-view {
+    width: 600px;
+    height: auto;
+    max-width: 90%;
+    margin-bottom: 20px;
 }
 
 .btn {
