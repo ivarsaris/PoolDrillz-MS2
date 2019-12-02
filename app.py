@@ -69,6 +69,7 @@ def exercises():
 def filter_exercises():
     exercises = mongo.db.exercises
     type_filter = request.form.get('type_filter')
+    print(type_filter)
     try:
         doc = exercises.find({'type_of_exercise': type_filter})
     except:
@@ -77,7 +78,7 @@ def filter_exercises():
     if not doc:
         print('No results found')
 
-    return render_template('exercises.html', doc=doc)
+    return render_template('exercises.html', exercises=doc)
 
 # viewexercise.html
 
@@ -106,18 +107,22 @@ def update_exercise(exercise_id):
     # retrieve exercises from the database
     exercises = mongo.db.exercises
     # add document to database with form
-    exercises.update({"_id": ObjectId(exercise_id)},
-                     {
+    exercise = {
         # all variables to be filled out in the form
         'name': request.form.get('name'),
         'description': request.form.get('description'),
         'type_of_exercise': request.form.getlist('type_of_exercise'),
         'skill_level': request.form.get('skill_level'),
         'date_added': request.form.get('date_added'),
-        'exercise_added_by': request.form.get('exercise_added_by'),
-        'image': base64.b64encode(request.files['image'].read()).decode("utf-8")
-    })
-
+        'exercise_added_by': request.form.get('exercise_added_by')
+        }
+    if 'image' in request.files:
+        image = request.files['image']
+         # turn image into string
+        image_string = base64.b64encode(image.read()).decode("utf-8")
+        exercise['image'] = "data:image/png;base64," + image_string
+     # add document to database with form
+    exercises.update({"_id": ObjectId(exercise_id)}, exercise)
     # redirect to exercises page after updating exercises
     return redirect(url_for('exercises'))
 
