@@ -47,8 +47,11 @@
                     </select>
 					<label>Find the rights exercises for you.</label>
 				</div>
-				<div class="col s12 m6">
-					<button class="btn waves-effect waves-light" type="submit">Filter<i class="material-icons right">filter_list</i></button>
+				<div class="col s6 m3">
+					<button class="btn waves-effect waves-light filter-button" type="submit">Filter<i class="material-icons right">filter_list</i></button>
+				</div>
+				<div class="col s6 m3">
+					<div class="btn waves-effect waves-light cancel-button filter-button"><a href={{ url_for('exercises') }}>Undo<i class="material-icons right">undo</i></a></div>
 				</div>
 			</div>
 		</form>
@@ -59,7 +62,7 @@
 	<div class="container">
 		<div class="row">
 			{% for exercise in exercises %}
-			<div class="col s12 l5 exercises-container">
+			<div class="exercises-container col s12 l5">
 				{% if exercise.name %}
 				<h4>{{exercise.name}}</h4>
 				{% else %}
@@ -90,7 +93,7 @@
 				</div>
 				{% endfor %}
 			</div>
-        </div>
+		</div>
 	</div>
 </section>
 

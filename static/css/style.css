@@ -34,7 +34,7 @@ nav .brand-logo {
 img {    
     width: 400px;
     height: 220px;
-    max-width: 90%;
+    max-width: 100%;
     max-height: auto;
     align: center;
 }
@@ -49,6 +49,8 @@ img {
 .btn {
     background-color: #0875c3;
     width: 272px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .btn-add {
@@ -64,12 +66,21 @@ img {
     width: 272px;
 }
 
-.add-cancel-button .cancel-button {
+.cancel-button {
     background-color: red;
 }
 
-.add-cancel-button .cancel-button a {
+.cancel-button a {
     color: white;
+}
+
+.filter-button {
+    width: 140px;
+
+}
+
+.footer .page-footer {
+    margin-bottom: -20px;
 }
 
 .page-footer {
@@ -78,6 +89,7 @@ img {
     padding-bottom: 0;
     left: 0;
     bottom: 0;
+    margin-bottom: -20px;
     width: 100%;
     background-color: #393a4c;
     z-index: 1;

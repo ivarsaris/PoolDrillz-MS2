@@ -6,6 +6,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!-- keeping old materialize css locally, otherwise checkboxes don't work -->
 	<link rel="stylesheet" href="{{url_for('static', filename='css/materialize.css')}}" type="text/css" />
 	<!-- own css -->
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
@@ -16,16 +17,18 @@
 <body>
 	<nav class="navbar-fixed">
 		<div class="nav-wrapper">
-			<div class="row">
-				<div class="col m4">
-					<a href={{ url_for('index') }} class="brand-logo">PoolDrillz</a>
-				</div>
-				<div class="col m8">
-					<ul id="nav-mobile" class="right hide-on-small-and-down">
-						<li><a href={{ url_for('exercises') }}>Exercises</a></li>
-						<li><a href={{ url_for('stats') }}>Statistics</a></li>
-						<li><a href={{ url_for('about') }}>About us</a></li>
-					</ul>
+			<div class="container">
+				<div class="row">
+					<div class="col m4">
+						<a href={{ url_for('index') }} class="brand-logo">PoolDrillz</a>
+					</div>
+					<div class="col m8">
+						<ul id="nav-mobile" class="right hide-on-small-and-down">
+							<li><a href={{ url_for('exercises') }}>Exercises</a></li>
+							<li><a href={{ url_for('stats') }}>Statistics</a></li>
+							<li><a href={{ url_for('about') }}>About us</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -60,8 +63,8 @@
 					</ul>
 				</div>
 			</div>
-		</div>
 	</footer>
+	</div>
 	<!-- jquery CDN -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

@@ -6,7 +6,6 @@ from base64 import b64encode
 from bson.json_util import dumps, loads
 import base64
 
-
 app = Flask(__name__)
 
 # storing MongoDB uri and database name in variables
@@ -25,7 +24,7 @@ def index():
 def about():
     return render_template('about.html')
 
-# add.html
+# add.html ##########################
 
 # route to template
 @app.route('/add')
@@ -53,8 +52,7 @@ def submit_exercise():
     # return to exercises page
     return redirect(url_for('exercises'))
 
-
-# exercises.html
+# exercises.html #########################
 
 @app.route('/exercises')
 def exercises():
@@ -64,24 +62,24 @@ def exercises():
     return render_template('exercises.html', exercises=exercises)
 
 # route for filter exercises function
-@app.route('/filter_exercises',  methods=['POST'])
+@app.route('/exercises',  methods=['POST'])
 # filter exercises function
 def filter_exercises():
+    # define exercises as all exercises in mongo collection
     exercises = mongo.db.exercises
+    # get value from filter form in exercises.html
     type_filter = request.form.get('type_filter')
-    print(type_filter)
+    # check database if there are results with this value
     try:
         doc = exercises.find({'type_of_exercise': type_filter})
+    # error if can't connect to database
     except:
         print("Error accessing database!")
+    # if there are results, return them in exercises template
+    if doc:
+        return render_template('exercises.html', exercises=doc) 
 
-    if not doc:
-        print('No results found')
-
-    return render_template('exercises.html', exercises=doc)
-
-# viewexercise.html
-
+# viewexercise.html #################################
 
 @app.route('/view_exercise/<exercise_id>')
 def view_exercise(exercise_id):
@@ -91,7 +89,7 @@ def view_exercise(exercise_id):
     # opens exercise in view_exercise.html with button in exercises.html
     return render_template('viewexercise.html', exercise=the_exercise)
 
-# editexercise.html
+# editexercise.html #################################
 
 # opens editexercise.html with 'edit exercise' button in viewexercise.html
 @app.route('/edit_exercise/<exercise_id>')
@@ -118,17 +116,16 @@ def update_exercise(exercise_id):
         'exercise_added_by': request.form.get('exercise_added_by')
         }
     existing_exercise = mongo.db.exercises.find_one({"_id": ObjectId(exercise_id)})
-    print(existing_exercise)
-    print('*********************')
-    print(request.files.to_dict())
     # check if user oploaded a new image or not
     if request.files['image'].filename != '':
+        # save new image
         image = request.files['image']
          # turn image into string
         image_string = base64.b64encode(image.read()).decode("utf-8")
         # save new image to database
         exercise['image'] = "data:image/png;base64," + image_string
     else:
+        # keep using existing image if no new image is given
         exercise['image'] = existing_exercise['image']
     # add document to database with form
     exercises.update({"_id": ObjectId(exercise_id)}, exercise)
@@ -147,8 +144,7 @@ def delete_exercise(exercise_id):
     # open exercises page after deleting exercise
     return redirect(url_for('exercises'))
 
-
-# stats.html
+# stats.html ######################################
 
 # opens stats page
 @app.route('/stats')
