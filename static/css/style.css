@@ -1,35 +1,4 @@
-nav .nav-wrapper {
-    background-color: #393a4c;
-}
-
-nav .brand-logo {
-    left: 20%;
-}
-
-/* @media only screen and (max-width: 492px) {
-    display: none;
-} */
-
-.homepage-container {
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.caption {
-    color: #393a4c;
-    position: relative;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.exercises-container {
-    border: 1px #393a4c solid;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
+/* all pages */
 
 img {    
     width: 400px;
@@ -39,27 +8,11 @@ img {
     align: center;
 }
 
-.image-view {
-    width: 600px;
-    height: auto;
-    max-width: 90%;
-    margin-bottom: 20px;
-}
-
 .btn {
     background-color: #0875c3;
     width: 272px;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-.btn-add {
-    background-color: #393a4c;
-    width: 272px;
-}
-
-.statistics {
-    text-align: center;
 }
 
 .add-cancel-button {
@@ -74,9 +27,18 @@ img {
     color: white;
 }
 
-.filter-button {
-    width: 140px;
+/* base.html */
 
+nav .nav-wrapper {
+    background-color: #393a4c;
+}
+
+nav .brand-logo {
+    left: 20%;
+}
+
+.empty-container {
+    height: 200px;
 }
 
 .footer .page-footer {
@@ -100,6 +62,52 @@ img {
     padding-top: 0;
 }
 
-.empty-container {
-    height: 200px;
+/* index.html */
+
+.homepage-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.caption {
+    color: #393a4c;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* exercises.html */
+
+.btn-add {
+    background-color: #393a4c;
+    width: 272px;
+}
+
+.filter-button {
+    width: 140px;
+
+}
+
+.exercises-container {
+    border: 1px #393a4c ridge;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* viewexercise.html */
+
+.image-view {
+    width: 600px;
+    height: auto;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+/* statistics */
+
+.statistics {
+    text-align: center;
 }
