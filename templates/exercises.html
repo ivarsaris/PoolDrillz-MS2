@@ -80,15 +80,13 @@
 					{% if exercise.image %}
 					<img class="small-img" src="{{exercise.image}}">
                     {% else %}
-					<img class="small-img" src="/static/images/noimage.jpg">
+					<img class="small-img" src="/static/images/noimage.jpg" alt="no exercise image found">
                     {% endif %}
                 </div>
                 <!-- link to viewexercise which displays all information on this exercise -->
-					<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}"
-						class="waves-effect waves-light btn">View whole
-						exercise<i class="material-icons right">pageview</i></button></a>
+				<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}" class="waves-effect waves-light btn">View whole exercise<i class="material-icons right">pageview</i></button></a>
 				</div>
-				{% endfor %}
+                {% endfor %}
 			</div>
 		</div>
 	</div>
