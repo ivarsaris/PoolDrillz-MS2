@@ -45,12 +45,14 @@
 		<div class="row">
 			<div class="row col s12 col m6 add-cancel-button">
 				<div>
+                <!-- button which links to edit exercise page. All values from this exercise are taken to this page-->
 					<a href="{{url_for('edit_exercise', exercise_id=exercise._id)}}"
 							class="waves-effect waves-light btn">Edit
 							exercise<i class="material-icons right">edit</i></a>
 				</div>
 			</div>
 			<div class="row col s12 col m6 add-cancel-button">
+            <!-- button returns user to exercises overview-->
 				<div>
 					<div class="btn waves-effect waves-light cancel-button"><a href={{ url_for('exercises') }}>Back to exercises<i class="material-icons right">keyboard_return</i></a></div>
 				</div>

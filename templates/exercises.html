@@ -37,10 +37,11 @@
                     </select>
                     <label>Find the rights exercises for you.</label>
                 </div>
+                <!-- Button submits the filter form -->
                 <div class="col s6 m3">
                     <button class="btn waves-effect waves-light filter-button" type="submit">Filter<i class="material-icons right">filter_list</i></button>
                 </div>
-                <!-- undo filter; renders exercises template without any filter -->
+                <!-- undo filter; renders exercises template without any filter. So all exercises are shown again. -->
                 <div class="col s6 m3">
                     <div class="btn waves-effect waves-light cancel-button filter-button"><a href={{ url_for( 'exercises') }}>Undo<i class="material-icons right">undo</i></a></div>
                 </div>

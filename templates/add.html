@@ -8,12 +8,14 @@
             <!-- form which, if submitted, adds exercise to the database -->
             <form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data" class="col s12">
                 <div class="row">
+                <!-- name as input because it's a short text -->
                     <div class="input-field col s12">
                         <input id="name" name="name" type="text" class="validate">
                         <label for="name">Exercise name</label>
                     </div>
                 </div>
                 <div class="row">
+                <!-- description as text area because user might need to give a long explanation -->
                     <div class="input-field col s12">
                         <textarea id="description" name="description" class="materialize-textarea"></textarea>
                         <label for="description">Exercise description</label>
@@ -23,6 +25,7 @@
                     <p>Type(s) of exercise, select option(s)</p>
                 </div>
                 <div class="row">
+                <!-- types of exercise as checkbox. Each checed checkbox sends this value to the database, all selected values are stored as array-->
                     <div class="col s6 m4 l2">
                         <p>
                             <label>
@@ -144,6 +147,8 @@
                     </div>
                 </div>
                 <div class="row">
+                <!-- date added as string notation. In stats page, this number is taken. The highest number is the most
+                recently added exercise. -->
                     <div class="input-field col s12">
                         <input id="date_added" name="date_added" type="text" class="validate">
                         <label for="date_added">Date(DD.MM.YYYY)</label>
@@ -156,6 +161,7 @@
                     </div>
                 </div>
                 <div class="row">
+                <!-- button submits the exercise to the database. -->
                     <div class="col s12 col m6 add-cancel-button">
                         <button class="btn waves-effect waves-light" type="submit">Add exercise to database<i class="material-icons right">send</i></button>
                     </div>

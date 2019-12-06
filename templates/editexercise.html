@@ -7,12 +7,14 @@
             <h1>Edit exercise</h1>
             <form action="{{ url_for('update_exercise', exercise_id=exercise._id) }}" enctype="multipart/form-data" method='POST' class="col s12 col m8">
                 <div class="row">
+                <!-- name as input because it's a short text -->
                     <div class="input-field col s12">
                         <input id="name" name="name" type="text" class="validate" value="{{exercise.name}}">
                         <label for="name">Exercise name</label>
                     </div>
                 </div>
                 <div class="row">
+                <!-- description as text area because user might need to give a long explanation -->
                     <div class="input-field col s12">
                         <textarea id="description" name="description" class="materialize-textarea" value="{{exercise.description}}">{{exercise.description}}</textarea>
                         <label for="description">Exercise description</label>
@@ -131,6 +133,8 @@
                     </div>
                 </div>
                 <div class="row">
+                <!-- current image is shown. This way, if the user doesn't add a new image, the old one is
+                saved to the database again. -->
                     {% if exercise.image %}
                     <img class="small-img" src="{{exercise.image}}"> 
                     {% else %}
@@ -147,6 +151,8 @@
                     </div>
                 </div>
                 <div class="row">
+                <!-- date added as string notation. In stats page, this number is taken. The highest number is the most
+                recently added exercise. -->
                     <div class="input-field col s12">
                         <input id="date_added" name="date_added" type="text" class="validate" value="{{exercise.date_added}}">
                         <label for="date_added">Date(DD.MM.YYYY)</label>
@@ -159,12 +165,15 @@
                     </div>
                 </div>
                 <div class="row col s12 l6 add-cancel-button">
+                <!-- button submits the exercise with all the changes to the database. -->
                     <div>
                         <button class="btn waves-effect waves-light" type="submit">Update {{exercise.name}}
                             <i class="material-icons right">update</i></button>
                     </div>
                 </div>
                 <div class="row col s12 l6 add-cancel-button">
+                <!-- button cancels the changes to the exercise. User is returned to exercises overview.
+                The exercises keeps its original values. -->
                     <div>
                         <div class="btn waves-effect waves-light cancel-button"><a href={{ url_for( 'exercises') }}>Cancel
 										update<i class="material-icons right">cancel</i></a></div>

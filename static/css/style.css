@@ -50,15 +50,26 @@ body {
     margin: 0;
     padding: 0;
     padding-bottom: 150px;
-    height: 100%;
+    min-height: 100%;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 180px;
 }
 
 .page-footer {
-   position: absolute;
+   position: fixed;
    bottom: 0;
    width: 100%;
-   height: 180px;
+   height: 140px;
+   padding-top: 0;
    background-color: #393a4c;
+   z-index: 2;
 }
 
 /* index.html */
@@ -66,12 +77,11 @@ body {
 .homepage-container {
     position: relative;
     text-align: center;
-    margin-top: 5%;
     padding: 20px;
 }
 
 .homepage-images {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .caption {
@@ -113,7 +123,6 @@ body {
 
 .statistics-title {
     text-align: center;
-    margin-top: 5%;
 }
 
 .statistics {
@@ -122,14 +131,6 @@ body {
 
 
 /* About */
-
-.about {
-    margin-top: 5%;
-}
-
-.about p {
-    margin-top: 5%;
-}
 
 .about-image {
     width: 350px;

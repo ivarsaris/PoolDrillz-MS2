@@ -136,6 +136,23 @@ I decided not to spend too much time on this.
 
 !!!!!!!!!!!!!!!!!!!!!!!
 
+### User interaction
+
+I tested all parts of the application manually.
+
+* All navigation buttons in the navbar lead to the intended page.
+* All navigations buttons in the footer lead to the intended page.
+* Exercises filter returns all exercises with the type of exercise filled out.
+* Undo exercises filter returns all exercises again.
+* Add exercise button leads to the add exercise page.
+* A user can add an exercise to the database by filling out the form and submitting it.
+* A user can leaves fields empty without causing issues. In this case, the default values I gave are shown.
+* A user can input values and hit cancel. This will return the user to the exercises page.
+* A user can make changes to an exercise by navigating to the edit exercise page.
+* A user can make changes to an exercise, all new values replace the old ones in the database.
+* A user can cancel making changes to an exercise. The exercise stays in the database with its original values.
+* A user can delete an exercise. Before it's deleted, the user will see a pop up in which he has to confirm deleting this exercise.
+
 ### Browser compatibility
 
 I ran the apllication in several browsers to make sure it's compatible with the most common ones. The application runs

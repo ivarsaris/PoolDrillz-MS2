@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section>
-	<div class="container statistics-title">
-		<div class="row">
-			<div class="col s12">
-            <!-- amount_of_exercises and last_added_exerc from stats function -->
-				<h1>Statistics</h1>
-			</div>
-		</div>
-        <div class="row">
-            <div class="col s12 statistics">
-				<h2><i>{{ amount_of_exercises }}</i></h2>
-				<h4>Total number of exercises in PoolDrillz</h4>
-				<h2><i>{{ last_aded_exerc.name }}</i></h2>
-				<h4>Most recently added exercise</h4>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 statistics-title">
+			<h1>Statistics</h1>
 		</div>
 	</div>
-</section>
+	<div class="row">
+        <!-- amount_of_exercises and last_added_exerc from stats function -->
+		<div class="col s12 statistics">
+			<h2><i>{{ amount_of_exercises }}</i></h2>
+			<h4>Total number of exercises in PoolDrillz</h4>
+			<h2><i>{{ last_aded_exerc.name }}</i></h2>
+			<h4>Most recently added exercise</h4>
+		</div>
+	</div>
+</div>
 
 {% endblock %}

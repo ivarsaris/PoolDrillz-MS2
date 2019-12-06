@@ -77,7 +77,7 @@ def filter_exercises():
         print("Error accessing database!")
     # if there are results, return them in exercises template
     if doc:
-        return render_template('exercises.html', exercises=doc) 
+        return render_template('exercises.html', exercises=doc)
 
 # viewexercise.html #################################
 
@@ -120,7 +120,7 @@ def update_exercise(exercise_id):
     if request.files['image'].filename != '':
         # save new image
         image = request.files['image']
-         # turn image into string
+        # turn image into string
         image_string = base64.b64encode(image.read()).decode("utf-8")
         # save new image to database
         exercise['image'] = "data:image/png;base64," + image_string
