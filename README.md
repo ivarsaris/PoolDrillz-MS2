@@ -2,7 +2,7 @@
 
 **Third milestone project; Data Centric Development - Full Stack Software Developer course - Code Institute**
 
-PoolDrillz is a C.R.U.D.(create, read, update & delete) application. Users can find exercises and make changes to them.
+PoolDrillz is a C.R.U.D.(create, read, update & delete) application. Users can find pool billiard exercises and make changes to them.
 The user can:
 - See an overview of all exercises
 - Filter this overview on type of exercises
@@ -89,14 +89,14 @@ That I would like to add are the following:
 The application has been made using the following Technologies:
 
 * **HTML5** - Coding language used for creating the content and structure of the website
-* **CSS** – Coding language used for styling the content
+* **CSS** - Coding language used for styling the content
 * **Python3** - Dynamic, object oriented programming language
 * **Flask** - Open source Python framework user for building web applications
 * **jQuery** - Used to simplify JavaScript for display purposes
-* **Google Chrome** – Used as browser and for developer tools
+* **Google Chrome** - Used as browser and for developer tools
 * [**Materialize**](https://materializecss.com/) - Framework library used for display, styling and icons
-* **Git** – Used for version control
-* [**Github**](https://github.com/) – Used to host the repository for the application
+* **Git** - Used for version control
+* [**Github**](https://github.com/) - Used to host the repository for the application
 * [**Heroku**](https://www.heroku.com/) - Used to deploy the application
 
 ## Testing
