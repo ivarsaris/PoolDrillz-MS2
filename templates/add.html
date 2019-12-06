@@ -2,123 +2,123 @@
 {% block content %}
 
 <section>
-	<div class="container">
-		<div class="row">
-			<h1>Add your own exercise</h1>
+    <div class="container">
+        <div class="row">
+            <h1>Add your own exercise</h1>
             <!-- form which, if submitted, adds exercise to the database -->
-			<form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data" class="col s12">
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="name" name="name" type="text" class="validate">
-						<label for="name">Exercise name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea id="description" name="description" class="materialize-textarea"></textarea>
-						<label for="description">Exercise description</label>
-					</div>
-				</div>
+            <form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" name="name" type="text" class="validate">
+                        <label for="name">Exercise name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" class="materialize-textarea"></textarea>
+                        <label for="description">Exercise description</label>
+                    </div>
+                </div>
                 <div class="row">
                     <p>Type(s) of exercise, select option(s)</p>
                 </div>
-				<div class="row">
-					<div class="col s6 m4 l2">
-						<p>
-							<label>
+                <div class="row">
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Technique" />
                                 <span>Technique</span>
                             </label>
-						</p>
-					</div>
-					<div class="col s6 m4 l2">
-						<p>
-							<label>
+                        </p>
+                    </div>
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Cue ball control" />
                                 <span>Cue ball control</span>
                             </label>
-						</p>
-					</div>
-					<div class="col s6 m4 l2">
-						<p>
-							<label>
+                        </p>
+                    </div>
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Potting ability" />
                                 <span>Potting ability</span>
                             </label>
-						</p>
-					</div>
-					<div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        </p>
+                    </div>
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Concentration" />
                                 <span>Concentration</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Safeties" />
                                 <span>Safeties</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Kicks" />
                                 <span>Kicks</span>
                             </label>
                         </p>
-					</div>
-					<div class="col s6 m4 l2">
-						<p>
-						    <label>
+                    </div>
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Banks" />
                                 <span>Banks</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="8-ball" />
                                 <span>8-ball</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="9-ball" />
                                 <span>9-ball</span>
                             </label>
                         </p>
-					</div>
-					<div class="col s6 m4 l2">
-						<p>
-						    <label>
+                    </div>
+                    <div class="col s6 m4 l2">
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="10-ball" />
                                 <span>10-ball</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Straight pool" />
                                 <span>Straight pool</span>
                             </label>
                         </p>
-					</div>
+                    </div>
                     <div class="col s6 m4 l2">
-						<p>
-						    <label>
+                        <p>
+                            <label>
                                 <input type="checkbox" name="type_of_exercise" value="Special skills" />
                                 <span>Special skills</span>
                             </label>
-					    </p>
-				    </div>
+                        </p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -161,11 +161,11 @@
                     </div>
                     <!-- cancel button returns user to exercises.html without submitting the form to the database -->
                     <div class="col s12 col m6 add-cancel-button">
-                        <button class="btn waves-effect waves-light cancel-button"><a href={{ url_for('exercises') }}>Cancel<i class="material-icons right">cancel</i></a></button>
+                        <button class="btn waves-effect waves-light cancel-button"><a href={{ url_for( 'exercises') }}>Cancel<i class="material-icons right">cancel</i></a></button>
                     </div>
                 </div>
-			</form>
-		</div>
-	</div>
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
