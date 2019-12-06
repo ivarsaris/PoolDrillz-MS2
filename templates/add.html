@@ -5,6 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<h1>Add your own exercise</h1>
+            <!-- form which, if submitted, adds exercise to the database -->
 			<form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data" class="col s12">
 				<div class="row">
 					<div class="input-field col s12">
@@ -158,6 +159,7 @@
                     <div class="col s12 col m6 add-cancel-button">
                         <button class="btn waves-effect waves-light" type="submit">Add exercise to database<i class="material-icons right">send</i></button>
                     </div>
+                    <!-- cancel button returns user to exercises.html without submitting the form to the database -->
                     <div class="col s12 col m6 add-cancel-button">
                         <button class="btn waves-effect waves-light cancel-button"><a href={{ url_for('exercises') }}>Cancel<i class="material-icons right">cancel</i></a></button>
                     </div>
