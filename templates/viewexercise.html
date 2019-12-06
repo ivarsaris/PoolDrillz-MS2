@@ -2,6 +2,8 @@
 {% block content %}
 <section>
 	<div class="container">
+    <!-- each part has in if statement to check if the key has a given value.
+    If not, a default value is displayed.-->
 		<div class="row">
             {% if exercise.name %}
 			<h1>{{exercise.name}}</h1>
@@ -21,6 +23,8 @@
             {% endif %}
 			<h5>Type of exercise</h5>
             {% if exercise.type_of_exercise %}
+            <!-- types of exercise are returned in an array, this function takes 
+            the values out of the array and returns them as a list seperated by , -->
             {{', '.join(exercise.type_of_exercise)}}
             {% else %}
             No type of exercise given
