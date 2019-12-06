@@ -129,12 +129,6 @@ looks good on all deviced from 320px width(smallest mobile device) and up. I als
 
 On some devices, the spacing between some buttons doesn't look very neat. With more time, this could easily be fixed. 
 But because the main purpope of this applications is the functionality, I decided to spend my time focusing on that.
-!!!!!!!!!!!!!!!!!!!!!!!
-
-On certain screen sizes, the footer doesn't stick to the bottom in the about page. I have tried to fix this but wasn't able to. 
-I decided not to spend too much time on this.
-
-!!!!!!!!!!!!!!!!!!!!!!!
 
 ### User interaction
 
