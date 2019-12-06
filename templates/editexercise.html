@@ -20,6 +20,7 @@
 					</div>
 				</div>
 				<div class="row">
+                <!-- each type of exercise checkbox has an if statement. If this value exists in database, the box is checked. -->
 					<div class="col s6 m4 l2">
 						<p>
 							<label>
@@ -118,6 +119,7 @@
 					</div>
 				</div>
 				<div class="row">
+                <!-- each skill level has if statement, if this value is in database, it's selected -->
 					<div class="input-field col s12">
 						<select id="skill_level" name="skill_level" value="{{exercise.skill_level}}">
                     <option value="Beginner" {% if exercise.skill_level == 'beginner' %} selected {%endif%}>Beginner</option>
