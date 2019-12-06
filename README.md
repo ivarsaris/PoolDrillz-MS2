@@ -47,8 +47,14 @@ because to have both a footer and a navbar at the top showing would take up too 
 
 #### Color
 
-The navigation bar and footer are dark blue (#393a4c). The add exercise button has the same color. 
+Neat colors that don't distract. This was my principle thought when choosing the color scheme for this application. I 
+didn't want the colors to distract from the content and layout. It had to look classy and clear. For this reason, I choose
+the following colors. The navigation bar and footer are dark blue (#393a4c). The add exercise button has the same color. 
 The other buttons are standard blue and red from Materialize. All text on the white background is black. All other text is white. 
+
+#### Font 
+
+I used Helvetica as font throughout the whole application. This for the simple reason that it's easy to read, and it looks neat as well. 
 
 ### Mockup
 
@@ -72,7 +78,9 @@ Features implemented, and left to be implemented later
 ### Features left to implement
 
 There are some features that I could add with more time. One is another exercise filter, this one by skill level. 
-Another feature would be some more interesting statistics.
+Another feature would be some more interesting statistics. Lastly I would like to add pagination on the exercises page.
+If many exercises are added, the page will become very long. Pagination will display the exercises by a certain amount
+on the page. The user can click through the paginations. 
 
 For other features I would like to implement, I would need a better understanding of the technology. Some features 
 That I would like to add are the following:
@@ -91,8 +99,9 @@ The application has been made using the following Technologies:
 * **HTML5** - Coding language used for creating the content and structure of the website
 * **CSS** - Coding language used for styling the content
 * **Python3** - Dynamic, object oriented programming language
-* **Flask** - Open source Python framework user for building web applications
+* **Flask** - Open source Python framework used for building web applications
 * **jQuery** - Used to simplify JavaScript for display purposes
+* **MongoDB** - Online open source document oriented database
 * **Google Chrome** - Used as browser and for developer tools
 * [**Materialize**](https://materializecss.com/) - Framework library used for display, styling and icons
 * **Git** - Used for version control
@@ -120,6 +129,12 @@ looks good on all deviced from 320px width(smallest mobile device) and up. I als
 
 On some devices, the spacing between some buttons doesn't look very neat. With more time, this could easily be fixed. 
 But because the main purpope of this applications is the functionality, I decided to spend my time focusing on that.
+!!!!!!!!!!!!!!!!!!!!!!!
+
+On certain screen sizes, the footer doesn't stick to the bottom in the about page. I have tried to fix this but wasn't able to. 
+I decided not to spend too much time on this.
+
+!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Browser compatibility
 
@@ -129,4 +144,42 @@ well in Google Chrome, Mozilla Firefox, and Safari.
 ### Code validation
 
 I ran the code through several validators to make sure there are no mistakes. The HTML validators don't take Flask into account,
-so several errors were returned. But I checked them and these were not mistakes. 
+so several errors were returned. I checked them and these were not mistakes.
+
+**HTML5**
+
+https://validator.w3.org/
+
+https://html5.validator.nu/
+
+**CSS**
+
+https://codebeautify.org/cssvalidate
+
+https://jigsaw.w3.org/css-validator/
+
+**Python**
+
+https://extendsclass.com/python-tester.html
+
+http://pep8online.com/
+
+## Deployment
+
+## Credits
+
+### Content
+
+All content and functionality in the application was written by me. 
+
+### Media
+
+Images were taken from Google or created by myself. I don’t own the copyright to any of the images.
+
+### Acknowledgements
+
+I want to thanks Seun Owonikoko, my mentor, for her support and feedback. I also want to thank the tutors from Code Institute, 
+especially Michael, for their help. They taught me a lot and were very patient with me.
+
+
+
