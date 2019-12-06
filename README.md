@@ -1,4 +1,4 @@
-# PoolDrillz - A pool billiard exercises collection
+# PoolDrillz - A pool billiard exercises database application
 
 **Third milestone project; Data Centric Development - Full Stack Software Developer course - Code Institute**
 
@@ -17,7 +17,7 @@ My eventual goal for PoolDrillz is for it to become an online community of pool 
 is easily accessible and pool players of each level can find the right exercises for them based on which area of their 
 game they want to improve on.
 
-![Image of PoolDrillz](../static/images/readmeimage.png)
+![Image of PoolDrillz](/static/images/readmeimage.png)
 
 LIVE APPLICATION (LINK)
 
@@ -45,7 +45,7 @@ All pages of the apllication can be accessed with one click from anywhere in the
 can be found in the navbar on top of the screen, and in the footer. On smaller screen only in the footer. I choose this 
 because to have both a footer and a navbar at the top showing would take up too much screen space.
 
-##### Color
+#### Color
 
 The navigation bar and footer are dark blue (#393a4c). The add exercise button has the same color. 
 The other buttons are standard blue and red from Materialize. All text on the white background is black. All other text is white. 
@@ -99,13 +99,13 @@ The application has been made using the following Technologies:
 * [**Github**](https://github.com/) – Used to host the repository for the application
 * [**Heroku**](https://www.heroku.com/) - Used to deploy the application
 
-** Testing
+## Testing
 
 The application achieves the goal set out. Users can create, read, update and delete exercises from the database.
 They can filter the exercises by type of exercise. The user can direct to any page of the application from anywhere 
 with one click. 
 
-*** Responsiveness
+### Responsiveness
 
 I have used Chrome developer tools during the whole process of building the application. This to make sure the 
 applications is responsive to all screen sizes and devices types. I have also run the application through https://responsivedesignchecker.com/
@@ -113,18 +113,20 @@ and checked many different devices. This to make sure the application looks good
 looks good on all deviced from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
 
 **Mobile** - Honor 10, Iphone 4, 7, and 10, and Samsung galaxy s9
+
 **Tablet** - Ipad pro
+
 **Desktop** - Lenovo 14 inch laptop, HP 15.6 inch laptop, and a 27 inch monitor 
 
 On some devices, the spacing between some buttons doesn't look very neat. With more time, this could easily be fixed. 
 But because the main purpope of this applications is the functionality, I decided to spend my time focusing on that.
 
-*** Browser compatibility
+### Browser compatibility
 
 I ran the apllication in several browsers to make sure it's compatible with the most common ones. The application runs
 well in Google Chrome, Mozilla Firefox, and Safari. 
 
-*** Code validation
+### Code validation
 
 I ran the code through several validators to make sure there are no mistakes. The HTML validators don't take Flask into account,
 so several errors were returned. But I checked them and these were not mistakes. 
