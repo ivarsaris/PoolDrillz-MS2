@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>PoolDrillz</title>
+	<title>PoolDrillz</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -16,70 +16,70 @@
 </head>
 
 <body>
-	<nav class="navbar-fixed">
-		<div class="nav-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col m4">
-						<a href={{ url_for('index') }} class="brand-logo">PoolDrillz</a>
-					</div>
-					<div class="col m8">
-						<ul id="nav-mobile" class="right hide-on-small-and-down">
-							<li><a href={{ url_for('exercises') }}>Exercises</a></li>
-							<li><a href={{ url_for('stats') }}>Statistics</a></li>
-							<li><a href={{ url_for('about') }}>About us</a></li>
-						</ul>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col m4">
+							<a href={{ url_for('index') }} class="brand-logo">PoolDrillz</a>
+						</div>
+						<div class="col m8">
+							<ul id="nav-mobile" class="right hide-on-small-and-down">
+								<li><a href={{ url_for('exercises') }}>Exercises</a></li>
+								<li><a href={{ url_for('stats') }}>Statistics</a></li>
+								<li><a href={{ url_for('about') }}>About us</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 	<!-- content to be copied to all pages -->
 
 	{% block content %}
 	{% endblock %}
 
-    <!-- empty container keeps content from being displayed behind the footer -->
+	<!-- empty container keeps content from being displayed behind the footer -->
 	<div class="container empty-container"></div>
+</body>
 
-
-	<footer class="page-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col s6 l6">
-					<h5 class="white-text">PoolDrillz</h5>
-					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
-					<div class="footer-copyright">
-						<div>
-							© 2019 Ivar Saris
-						</div>
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col s6 l6">
+				<h5 class="white-text">PoolDrillz</h5>
+				<p class="grey-text text-lighten-4">Created as a non profit project.</p>
+				<div class="footer-copyright">
+					<div>
+						© 2019 Ivar Saris
 					</div>
 				</div>
-				<div class="col s6  l4 offset-l2">
-					<ul>
-						<li><a class="grey-text text-lighten-3" href={{ url_for('index') }}>Home</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for('exercises') }}>Exercises</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for('stats') }}>Statistics</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for('about') }}>About us</a></li>
-					</ul>
-				</div>
 			</div>
-        </div>
-	</footer>
-	
-	<!-- jquery CDN -->
-	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<!-- Materialize javascript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<!--jQuery to initialize select element in form, autoinit to initialize checkboxes -->
-	<script>
-		$(document).ready(function(){
+			<div class="col s6  l4 offset-l2">
+				<ul>
+					<li><a class="grey-text text-lighten-3" href={{ url_for('index') }}>Home</a></li>
+					<li><a class="grey-text text-lighten-3" href={{ url_for('exercises') }}>Exercises</a></li>
+					<li><a class="grey-text text-lighten-3" href={{ url_for('stats') }}>Statistics</a></li>
+					<li><a class="grey-text text-lighten-3" href={{ url_for('about') }}>About us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
+<!-- Materialize javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!--jQuery to initialize select element in form, autoinit to initialize checkboxes -->
+<script>
+	$(document).ready(function(){
             $('select').material_select();
         M.AutoInit();
         });
-	</script>
-
-</body>
+</script>
 
 </html>

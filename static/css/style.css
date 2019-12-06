@@ -1,11 +1,11 @@
 /* all pages */
 
-img {    
+img {
+    align-content: center;
     width: 400px;
-    height: 220px;
     max-width: 100%;
-    max-height: auto;
-    align: center;
+    height: 220px;
+    max-height: inherit;
 }
 
 .btn {
@@ -29,6 +29,10 @@ img {
 
 /* base.html */
 
+.navbar-fixed {
+    height: 100px;
+}
+
 nav .nav-wrapper {
     background-color: #393a4c;
 }
@@ -38,28 +42,22 @@ nav .brand-logo {
 }
 
 .empty-container {
-    height: 200px;
+    height: 100px;
 }
 
-.footer .page-footer {
-    margin-bottom: -20px;
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 150px;
+    height: 100%;
 }
 
 .page-footer {
-    position: fixed;
-    padding-top: 0;
-    padding-bottom: 0;
-    left: 0;
-    bottom: 0;
-    margin-bottom: -20px;
-    width: 100%;
-    background-color: #393a4c;
-    z-index: 1;
-}
-
-.page-footer .footer-copyright {
-    min-height: 0;
-    padding-top: 0;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 180px;
+   background-color: #393a4c;
 }
 
 /* index.html */
@@ -67,8 +65,12 @@ nav .brand-logo {
 .homepage-container {
     position: relative;
     text-align: center;
-    color: white;
+    margin-top: 5%;
     padding: 20px;
+}
+
+.homepage-images {
+    margin-top: 10%;
 }
 
 .caption {
@@ -108,6 +110,29 @@ nav .brand-logo {
 
 /* statistics */
 
+.statistics-title {
+    text-align: center;
+    margin-top: 5%;
+}
+
 .statistics {
     text-align: center;
+}
+
+
+/* About */
+
+.about {
+    margin-top: 5%;
+}
+
+.about p {
+    margin-top: 5%;
+}
+
+.about-image {
+    width: 350px;
+    max-width: 100%;
+    height: 200px;
+    max-height: auto;
 }
