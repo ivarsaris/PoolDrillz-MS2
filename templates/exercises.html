@@ -7,26 +7,16 @@
 			<div class="col s12 title">
 				<h1>Exercises</h1>
 			</div>
-		</div>
-	</div>
-</section>
-
-<section>
-	<div class="container">
-		<div class="row">
 			<div class="col s12 m6">
 				<h5>Add your own exercise to the database</h5>
 			</div>
 			<div class="col s12 m6">
+            <!-- link to add.html -->
 				<a href={{ url_for('add') }} class="waves-effect waves-light btn btn-add">Add
 					exercise<i class="material-icons right">add_box</i></button></a>
 			</div>
 		</div>
-	</div>
-</section>
-
-<section>
-	<div class="container">
+    <!-- filter function, user can choose type of exercise. all exercises with this type will open in exercises template -->
 		<form action="{{ url_for('filter_exercises') }}" enctype="multipart/form-data" method='POST'>
 			<div class="row">
 				<div class="input-field col s12 m6">
@@ -50,6 +40,7 @@
 				<div class="col s6 m3">
 					<button class="btn waves-effect waves-light filter-button" type="submit">Filter<i class="material-icons right">filter_list</i></button>
 				</div>
+                <!-- unfo filter; renders exercises template without any filter -->
 				<div class="col s6 m3">
 					<div class="btn waves-effect waves-light cancel-button filter-button"><a href={{ url_for('exercises') }}>Undo<i class="material-icons right">undo</i></a></div>
 				</div>
@@ -61,6 +52,9 @@
 <section>
 	<div class="container">
 		<div class="row">
+        <!-- for loop to iterate through all exercises in the database and display them
+        one by one in the container. Each key has an if statement which checks if there's a value 
+        for this key in the database. If not, a default value is displayed. -->
 			{% for exercise in exercises %}
 			<div class="exercises-container col s12 l5">
 				{% if exercise.name %}
@@ -70,6 +64,8 @@
 				{% endif %}
 				<h6><strong>Type of exercise</strong></h6>
 				{% if exercise.type_of_exercise %}
+                <!-- types of exercise are returned in an array, this function takes 
+            the values out of the array and returns them as a list seperated by , -->
 				<p>{{', '.join(exercise.type_of_exercise)}}</p>
 				{% else %}
 				<p><i>No type of exercise known</i></p>
@@ -87,6 +83,7 @@
 					<img class="small-img" src="/static/images/noimage.jpg">
                     {% endif %}
                 </div>
+                <!-- link to viewexercise which displays all information on this exercise -->
 					<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}"
 						class="waves-effect waves-light btn">View whole
 						exercise<i class="material-icons right">pageview</i></button></a>
