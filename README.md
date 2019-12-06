@@ -9,7 +9,7 @@ The user can:
 - Open each individual exercise in a page with all information
 - Make changes to each exercise
 - Add a new exercise
-- Delete an exercsise
+- Delete an exercise
 
 The idea came to me because I'm a semi professional pool player. And for pool players, there is not clear path to
 becoming a better player. There are many exercises and ideas floating around, but there's no clear overview. 
@@ -37,12 +37,12 @@ Before starting to build the application. I wrote user stories so I knew which f
 ### Design
 
 PoolDrillz is a simply designed application. The main purpose of this project was to build an application that connects to 
-a database. The user can use this apllication to perform C.R.U.D. operations. 
+a database. The user can use this application to perform C.R.U.D. operations. 
 
 #### Navigation
 
-All pages of the apllication can be accessed with one click from anywhere in the application. On larger screens, the links
-can be found in the navbar on top of the screen, and in the footer. On smaller screen only in the footer. I choose this 
+All pages of the application can be accessed with one click from anywhere in the application. On larger screens, the links
+are found in the navbar on top of the screen, and in the footer. On smaller screen only in the footer. I choose this 
 because to have both a footer and a navbar at the top showing would take up too much screen space.
 
 #### Color
@@ -54,7 +54,7 @@ The other buttons are standard blue and red from Materialize. All text on the wh
 
 #### Font 
 
-I used Helvetica as font throughout the whole application. This for the simple reason that it's easy to read, and it looks neat as well. 
+I used Helvetica as font throughout the application. This for the simple reason that it's easy to read, and it looks neat as well. 
 
 ### Mockup
 
@@ -86,9 +86,9 @@ For other features I would like to implement, I would need a better understandin
 That I would like to add are the following:
 * Allow user to create an account. In this account, the user can store exercises suitable for them.
 * Password integration, so each user has a secure account.
-* User can only delete an execise he or she added to the database themself, this to avoid abuse.
+* User can only delete an exercise he or she added to the database themself, this to avoid abuse.
 * A forum on which users can discuss ideas and ask questions.
-* An image template, where the user can drag balls onto an empty pooltable to create an image for an exercise. 
+* An image template, where the user can drag balls onto an empty pool table to create an image for an exercise. 
 * A high score table. Users can input their high score of an exercise, to create competition.
 * Exercise review. Users can give a star rating to an exercise. The average of all ratings is displayed next to the exercise.
 
@@ -111,15 +111,15 @@ The application has been made using the following Technologies:
 ## Testing
 
 The application achieves the goal set out. Users can create, read, update and delete exercises from the database.
-They can filter the exercises by type of exercise. The user can direct to any page of the application from anywhere 
-with one click. 
+They can filter the exercises by type of exercise. The user can direct to any page of the application
+with one click from anywhere. 
 
 ### Responsiveness
 
 I have used Chrome developer tools during the whole process of building the application. This to make sure the 
 applications is responsive to all screen sizes and devices types. I have also run the application through https://responsivedesignchecker.com/
 and checked many different devices. This to make sure the application looks good on all of them. I ensured the application
-looks good on all deviced from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
+looks good on all devices from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
 
 **Mobile** - Honor 10, Iphone 4, 7, and 10, and Samsung galaxy s9
 
@@ -149,7 +149,7 @@ I tested all parts of the application manually.
 
 ### Browser compatibility
 
-I ran the apllication in several browsers to make sure it's compatible with the most common ones. The application runs
+I ran the application in several browsers to make sure it's compatible with the most common ones. The application runs
 well in Google Chrome, Mozilla Firefox, and Safari. 
 
 ### Code validation
@@ -177,6 +177,38 @@ http://pep8online.com/
 
 ## Deployment
 
+### Local Deployment
+
+The application is deployed in Heroku. To get the app running locally, follow these steps:
+
+1. Set up a workspace in your development environment
+2. Clone the app from my GitHub repository with the following command: git clone https://github.com/ivarsaris/PoolDrillz-MS2
+3. Change the directory with the following command: cd PoolDrillz
+4. Install the required installations with the following command: sudo pip3 install -r requirements.txt
+5. Create your own Mongo collection, and create your own Mongo URI**
+6. in app.py, replace my Mongo URI with yours(line 13), and replace my mongo collection name with yours(line 12)
+7. Save the file, and run it in the terminal with the following command: python3 app.py
+
+Now your app is running locally
+
+** create mongo collection:
+1. Sign into [MongoDB](https://www.mongodb.com/)
+2. Go to collections
+3. Create database
+4. Go to overview > connect > connect your application
+5. copy the connection string and replace <password> with your mongo password
+
+Now you have your own Mongo URI
+
+### Deployment to Heroku
+
+1. Set up an account in Heroku
+2. Go to your dashboard and create a new app
+3. Enter a name, this has to be a unique one in Heroku, and select your region
+4. go to deploy > Manual deploy > deploy a GitHub branch
+5. Select a branch to deploy and click "Deploy branch"
+6. You can see the app live by clicking "view"
+ 
 ## Credits
 
 ### Content
@@ -191,6 +223,3 @@ Images were taken from Google or created by myself. I don’t own the copyright 
 
 I want to thanks Seun Owonikoko, my mentor, for her support and feedback. I also want to thank the tutors from Code Institute, 
 especially Michael, for their help. They taught me a lot and were very patient with me.
-
-
-
