@@ -1,5 +1,12 @@
 /* all pages */
 
+html {
+    /* Set min-height to 100% to make sure 
+    the footer sticks to the bottom */
+    min-height: 100%;
+    position: relative;
+}
+
 img {
     align-content: center;
     width: 400px;
@@ -44,7 +51,7 @@ nav .brand-logo {
 body {
     height: 100%;
     font-family: Helvetica;
-    /* footer height is 65px */
+    /* footer height is 140px */
     margin: 0 0 140px;
     padding-bottom: 25px;
 }
@@ -54,9 +61,6 @@ body {
   min-height: 100vh;
 }
 
-#content-wrap {
-  padding-bottom: 180px;
-}
 
 footer {
    position: absolute;

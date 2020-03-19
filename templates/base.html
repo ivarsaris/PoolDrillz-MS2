@@ -17,35 +17,33 @@
 
 <body>
 	<div id="page-container">
-		<div id="content-wrap">
-			<!--navbar fixed to top, so it can always be seen by the user. The user navigates through the pages
+		<!--navbar fixed to top, so it can always be seen by the user. The user navigates through the pages
         with links in the navbar-->
-			<div class="navbar-fixed">
-				<nav>
-					<div class="nav-wrapper">
-						<div class="container">
-							<div class="row">
-								<div class="col m4">
-									<a href={{ url_for( 'index') }} class="brand-logo">PoolDrillz</a>
-								</div>
-								<div class="col m8">
-									<!-- links don't fit on small screen. User can navigate through the pages with links in the fixed footer-->
-									<ul id="nav-mobile" class="right hide-on-small-and-down">
-										<li><a href={{ url_for( 'exercises') }}>Exercises</a></li>
-										<li><a href={{ url_for( 'stats') }}>Statistics</a></li>
-										<li><a href={{ url_for( 'about') }}>About us</a></li>
-									</ul>
-								</div>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col m4">
+								<a href={{ url_for( 'index') }} class="brand-logo">PoolDrillz</a>
+							</div>
+							<div class="col m8">
+								<!-- links don't fit on small screen. User can navigate through the pages with links in the fixed footer-->
+								<ul id="nav-mobile" class="right hide-on-small-and-down">
+									<li><a href={{ url_for( 'exercises') }}>Exercises</a></li>
+									<li><a href={{ url_for( 'stats') }}>Statistics</a></li>
+									<li><a href={{ url_for( 'about') }}>About us</a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
-				</nav>
-			</div>
-			<!-- content to be copied on all pages -->
-			{% block content %}
-			{% endblock %}
-			<!-- empty container keeps content from being displayed behind the footer -->
+				</div>
+			</nav>
 		</div>
+		<!-- content to be copied on all pages -->
+		{% block content %}
+		{% endblock %}
+		<!-- empty container keeps content from being displayed behind the footer -->
 	</div>
 	<footer>
 		<div class="container">
