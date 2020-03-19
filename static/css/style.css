@@ -29,10 +29,6 @@ img {
 
 /* base.html */
 
-.navbar-fixed {
-    height: 200px;
-}
-
 nav .nav-wrapper {
     background-color: #393a4c;
 }
@@ -46,11 +42,11 @@ nav .brand-logo {
 }
 
 body {
+    height: 100%;
     font-family: Helvetica;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 150px;
-    min-height: 100%;
+    /* footer height is 65px */
+    margin: 0 0 140px;
+    padding-bottom: 25px;
 }
 
 #page-container {
@@ -62,13 +58,15 @@ body {
   padding-bottom: 180px;
 }
 
-.page-footer {
-   position: fixed;
+footer {
+   position: absolute;
+   left: 0;
    bottom: 0;
    width: 100%;
    height: 140px;
-   padding-top: 0;
+   padding-top: 10px;
    background-color: #393a4c;
+   margin-top: 50px;
    z-index: 2;
 }
 

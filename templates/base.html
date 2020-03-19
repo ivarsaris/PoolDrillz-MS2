@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>PoolDrillz - {% block title %} {% endblock %}</title>
+	<title>PoolDrillz - {% block title %} {% endblock %}</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -18,7 +18,7 @@
 <body>
 	<div id="page-container">
 		<div id="content-wrap">
-        <!--navbar fixed to top, so it can always be seen by the user. The user navigates through the pages
+			<!--navbar fixed to top, so it can always be seen by the user. The user navigates through the pages
         with links in the navbar-->
 			<div class="navbar-fixed">
 				<nav>
@@ -29,7 +29,7 @@
 									<a href={{ url_for( 'index') }} class="brand-logo">PoolDrillz</a>
 								</div>
 								<div class="col m8">
-                                <!-- links don't fit on small screen. User can navigate through the pages with links in the fixed footer-->
+									<!-- links don't fit on small screen. User can navigate through the pages with links in the fixed footer-->
 									<ul id="nav-mobile" class="right hide-on-small-and-down">
 										<li><a href={{ url_for( 'exercises') }}>Exercises</a></li>
 										<li><a href={{ url_for( 'stats') }}>Statistics</a></li>
@@ -45,34 +45,33 @@
 			{% block content %}
 			{% endblock %}
 			<!-- empty container keeps content from being displayed behind the footer -->
-			<div class="container empty-container"></div>
 		</div>
 	</div>
-</body>
-
-<footer class="page-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col s6 l6">
-				<h5 class="white-text">PoolDrillz</h5>
-				<p class="grey-text text-lighten-4">Created as a non profit project.</p>
-				<div class="footer-copyright">
-					<div>
-						© 2019 Ivar Saris
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col s6 l6">
+					<h5 class="white-text">PoolDrillz</h5>
+					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
+					<div class="footer-copyright">
+						<div>
+							© 2019 Ivar Saris
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col s6  l4 offset-l2">
-				<ul>
-					<li><a class="grey-text text-lighten-3" href={{ url_for( 'index') }}>Home</a></li>
-					<li><a class="grey-text text-lighten-3" href={{ url_for( 'exercises') }}>Exercises</a></li>
-					<li><a class="grey-text text-lighten-3" href={{ url_for( 'stats') }}>Statistics</a></li>
-					<li><a class="grey-text text-lighten-3" href={{ url_for( 'about') }}>About us</a></li>
-				</ul>
+				<div class="col s6  l4 offset-l2">
+					<ul>
+						<li><a class="grey-text text-lighten-3" href={{ url_for( 'index') }}>Home</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for( 'exercises') }}>Exercises</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for( 'stats') }}>Statistics</a></li>
+						<li><a class="grey-text text-lighten-3" href={{ url_for( 'about') }}>About us</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
+</body>
+
 
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
