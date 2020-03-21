@@ -10,7 +10,7 @@ html {
 body {
     height: 100%;
     font-family: Helvetica;
-    /* footer height is 140px */
+    /* footer height is 150px */
     margin: 0 0 150px;
     padding-bottom: 25px;
 }
@@ -23,8 +23,23 @@ footer {
    height: 150px;
    padding-top: 10px;
    background-color: #393a4c;
+   color: white;
    margin-top: 50px;
    z-index: 2;
+}
+
+.footer-links {
+    margin-top: 1em;
+}
+
+.footer-link {
+    color: white;
+    transition: 0.5s;
+}
+
+.footer-link:hover {
+    color: #FFA400;
+    text-decoration: none;
 }
 
 img {
@@ -131,12 +146,13 @@ extremely small screens */
 }
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color: rgba(255,255,255,.5);
-    background-color: #393a4c;
+    color: #FFA400;
+    background-color: #404258;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
     color: white;
+    transition: 0.5s;
 }
 
 @media (min-width: 992px) {
@@ -148,22 +164,34 @@ extremely small screens */
 
 /* index.html */
 
-.homepage-container {
-    position: relative;
-    text-align: center;
-    padding: 20px;
+.homepage-container-grey {
+    background-color: #cccccc99;
 }
 
 .homepage-images {
     margin-top: 5%;
 }
 
-.caption {
-    color: #393a4c;
-    position: relative;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%);
+.home-title {
+    text-align: center;
+    margin-top: 1em;
+    color: #005bff;
+}
+
+.home-intro {
+    text-align: center;
+    font-size: 1.3em;
+    color: #FFA400;
+}
+
+@media (min-width: 768px) {
+    .home-intro {
+    margin-top: 2em;
+    }
+}
+
+.homepage-column {
+    text-align: center;
 }
 
 /* exercises.html */

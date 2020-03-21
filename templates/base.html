@@ -56,11 +56,10 @@
 	<!-- content to be copied on all pages -->
 	{% block content %}
 	{% endblock %}
-	<!-- empty container keeps content from being displayed behind the footer -->
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col s6 l6">
+				<div class="col-6">
 					<h5 class="white-text">PoolDrillz</h5>
 					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
 					<div class="footer-copyright">
@@ -69,19 +68,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="col s6  l4 offset-l2">
+				<div class="col-6  col-lg-4 offset-l2 footer-links">
 					<ul>
-						<li><a class="grey-text text-lighten-3" href={{ url_for( 'index') }}>Home</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for( 'exercises') }}>Exercises</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for( 'stats') }}>Statistics</a></li>
-						<li><a class="grey-text text-lighten-3" href={{ url_for( 'about') }}>About us</a></li>
+						<li><a class="footer-link" href={{ url_for( 'index') }}>Home</a></li>
+						<li><a class="footer-link" href={{ url_for( 'exercises') }}>Exercises</a></li>
+						<li><a class="footer-link" href={{ url_for( 'stats') }}>Statistics</a></li>
+						<li><a class="footer-link" href={{ url_for( 'about') }}>About us</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
 </body>
-
 
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
