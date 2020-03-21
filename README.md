@@ -11,7 +11,7 @@ The user can:
 - Add a new exercise
 - Delete an exercise
 
-The idea came to me because I'm a semi professional pool player. And for pool players, there is not clear path to
+The idea came to me because I'm a semi professional pool player. And for pool players, there is no clear path to
 becoming a better player. There are many exercises and ideas floating around, but there's no clear overview. 
 My eventual goal for PoolDrillz is for it to become an online community of pool players and trainers where information
 is easily accessible and pool players of each level can find the right exercises for them based on which area of their 
