@@ -1,4 +1,4 @@
-/* all pages */
+/************ general styling **************/
 
 html {
     /* Set min-height to 100% to make sure 
@@ -10,40 +10,18 @@ html {
 body {
     height: 100%;
     font-family: Helvetica;
-    /* footer height is 150px */
-    margin: 0 0 150px;
+    /* set margin so content can't
+    go behind footer */
+    margin: 0 0 140px;
     padding-bottom: 25px;
 }
 
-footer {
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 150px;
-   padding-top: 10px;
-   background-color: #003189;
-   color: white;
-   margin-top: 50px;
-   z-index: 2;
-}
-
-.footer-links {
-    margin-top: 1em;
-}
-
-.footer-link {
-    color: white;
-    transition: 0.5s;
-}
-
-.footer-link:hover {
-    color: #ff005b;
-    text-decoration: none;
-}
-
 .container-grey {
-    background-color: #cccccc99;
+    background-color: #212529d6;
+}
+
+.title {
+    text-align: center;
 }
 
 img {
@@ -65,9 +43,53 @@ img {
     width: 272px;
 }
 
-/* base.html */
+/* footer */
 
-/********** navbar *****************/
+footer {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 156px;
+   padding-top: 1em;
+   background-color: #003189;
+   color: white;
+   z-index: 2;
+}
+
+.footer-links {
+    margin-top: 1em;
+}
+
+.footer-link {
+    color: white;
+    transition: 0.5s;
+}
+
+.footer-link:hover {
+    color: #ff005b;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    margin-top: -0.5em;
+}
+
+/* these settings so there's no white
+under footer on very small screen */
+@media only screen and (max-width: 503px) {
+    .footer-copyright {
+    font-size: 0.8em;
+    }
+    .text-lighten-4 {
+    font-size: 0.8em;
+    }
+    footer {
+    height: 156px;
+    }
+}
+
+/* navbar */
 
 .title-image {
     height: 3em;
@@ -108,7 +130,6 @@ extremely small screens */
     }
 }
 
-
 .navbar-dark .navbar-toggler {
     color: white;
     border-color: white;
@@ -126,8 +147,8 @@ extremely small screens */
 
 .navbar-collapse {
     align-items: center;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -1em;
+    margin-right: -1em;
     color: white;
     z-index: 2;
     text-align: center;
@@ -158,11 +179,7 @@ extremely small screens */
     }
 }
 
-/* index.html */
-
-.homepage-images {
-    margin-top: 5%;
-}
+/************ index.html **************/
 
 .home-title {
     text-align: center;
@@ -190,9 +207,9 @@ extremely small screens */
 .homepage-column-body {
     text-align: center;
     height: 100%;
-    color: black;
+    color: #ff005b;
     background-color: white;
-    border: 1px solid white;
+    border: 2px solid #00ffa466;
     border-radius: 1em;
     padding: 1em;
 }
@@ -210,23 +227,29 @@ img.responsive-img {
     }
 }
 
-/* exercises.html */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+}
+
+/************ exercises.html **************/
 
 .add-exercise-link {
     margin-top: 1em;
-    color: #005bff;
-    text-align: center;
-}
-
-.title {
+    color: #00ffa4;
     text-align: center;
 }
 
 .btn-add {
-    background-color: #FFA400;
-    color: black;
+    background-color: #ff005b;
+    color: white;
     margin: 1em 1em 2em;
     width: 280px;
+    max-width: 90%;
+    margin-left: 5%;
     transition: 0.5s;
 }
 
@@ -301,11 +324,15 @@ img.responsive-img {
 }
 
 .exercises-container-body h6 {
+    display: table;
+    margin: 0px auto 0px auto;
     color: #00ffa4;
     background-color: black;
+    border: 1px solid #00ffa4;
+    padding: 5px 1em;
     border-radius: 5px;
+    margin-bottom: 0.5em;
 }
-
 
 .small-img {
     width: 400px;
@@ -313,16 +340,58 @@ img.responsive-img {
     height: auto;
 }
 
-/* viewexercise.html */
+.btn-view {
+    background-color: #FFA400;
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+/* "view whole exercise" doesn't fit on 
+very small screen. This way, the user
+can see the whole text */
+@media screen and (max-width: 360px) {
+    .btn-view {
+        height: 5em;
+    }
+    .btn-view i {
+        display: none;
+    }
+}
+
+
+/************* viewexercise.html ****************/
+
+.view-exercise {
+    text-align: center;
+}
+
+.view-exercise-title {
+    color: #ff005b;
+}
+
+.view-exercise p {
+    font-size: 1.2em;
+}
+
+.view-exercise h5 {
+    display: table;
+    margin: 0 auto 0 auto;
+    color: black;
+    background-color: #00ffa4;
+    padding: 5px 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
 
 .image-view {
     width: 600px;
     height: auto;
     max-width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
-/* statistics */
+/************* stats.html ****************/
 
 .statistics-title {
     text-align: center;
@@ -333,27 +402,19 @@ img.responsive-img {
     margin-bottom: 1em;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-    .col-md-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-    }
-}
-
 .statistics-body {
     text-align: center;
     height: 100%;
     color: #FFA400;
     background-color: white;
-    border: 1px solid white;
+    border: 2px solid #00ffa466;
     border-radius: 6em;
     margin-bottom: 1em;
     padding: 1em;
 }
 
 .statistics h5 {
-    color:black;
+    color: black;
 }
 
 .fo-icon {
@@ -362,15 +423,14 @@ img.responsive-img {
     margin-top: 1rem;
 }
 
-
-/* About */
+/************* about.html ****************/
 
 .about {
     text-align: center;
 }
 
 .about-description {
-    color: #005bff;
+    color: #00ffa4;
     margin: 1em;
     font-size: 1.3em;
 }
@@ -379,7 +439,6 @@ img.responsive-img {
     width: 350px;
     max-width: 100%;
     height: 200px;
-    max-height: auto;
 }
 
 .sponsors p {
@@ -388,11 +447,105 @@ img.responsive-img {
 
 .sponsors a {
     color: #FFA400;
-    text-decoration: underline;
+    text-decoration: underline #00ffa4;
     transition: 0.5s;
 }
 
 .sponsors a:hover {
     color: #005bff;
     text-decoration: none;
+}
+
+/************* add.html ****************/
+
+.add-exercise-text {
+    text-align: center;
+    color: #00ffa4;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.add-exercise-form {
+    background-color: white;
+    border-radius: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .add-exercise-form form {
+    width: 80%;
+    margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .add-exercise-form form {
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+
+.input-field {
+    color: #003189;
+}
+
+.input-field label {
+    color: black;
+    margin-left: 1em;
+    font-size: 1em;
+}
+
+.type-checkbox {
+    margin-top: 2em;
+}
+
+.exercise-type-lable {
+    color: black;
+    margin-left: 1em;
+}
+
+.upload-image-btn {
+    background-color:#FFA400;
+    margin: 0;
+}
+
+.cancel-button a {
+    color: white;
+}
+
+.upload-image-btn {
+    width: 260px;
+}
+
+.add-cancel-button {
+    width: 260px;
+}
+
+.add-cancel-button-red {
+    width: 260px;
+    background-color: red;
+}
+
+@media screen and (max-width: 540px) {
+    .add-exerc-button {
+        width: 240px;
+    }
+}
+
+/************* editexercise.html ****************/
+
+.delete-exercise {
+    text-align: center;
+}
+
+.delete-exerc-btn {
+    color: red;
+    background-color: black;
+    transition: 0.5s;
+}
+
+.delete-exerc-btn:hover {
+    color: black;
+    background-color: white;
 }
