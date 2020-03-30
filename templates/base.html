@@ -20,44 +20,56 @@
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- bootstrap JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-	</script>
 </head>
 
 <body>
-	<nav class="navbar navbar-dark navbar-expand-lg">
+	<nav class="navbar sticky-top navbar-dark navbar-expand-lg">
 		<div class="container">
             <img class="title-image" src="/static/images/oefening.jpg" alt="exercise image">&nbsp;
-			<a href={{ url_for( 'index') }} class="navbar-brand">PoolDrillz</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+			<a href={{ url_for( 'index' ) }} class="navbar-brand">PoolDrillz</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href={{ url_for( 'exercises') }}>Exercises</a>
+						<a class="nav-link" href={{ url_for( 'exercises' ) }}>Exercises</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href={{ url_for( 'stats') }}>Statistics</a>
+						<a class="nav-link" href={{ url_for( 'stats' ) }}>Statistics</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href={{ url_for( 'about') }}>About us</a>
+						<a class="nav-link" href={{ url_for( 'about' ) }}>About us</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    {{ message }}
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+    </div>
+
 	<!-- content to be copied on all pages -->
-	{% block content %}
-	{% endblock %}
+
+    <main>
+        {% block content %}
+	    {% endblock %}
+    </main>
+	
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -66,34 +78,38 @@
 					<p class="grey-text text-lighten-4">Created as a non profit project.</p>
 					<div class="footer-copyright">
 						<div>
-							© 2019 Ivar Saris
+							<p>© 2019 Ivar Saris</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-6  col-lg-4 offset-l2 footer-links">
 					<ul>
-						<li><a class="footer-link" href={{ url_for( 'index') }}>Home</a></li>
-						<li><a class="footer-link" href={{ url_for( 'exercises') }}>Exercises</a></li>
-						<li><a class="footer-link" href={{ url_for( 'stats') }}>Statistics</a></li>
-						<li><a class="footer-link" href={{ url_for( 'about') }}>About us</a></li>
+						<li><a class="footer-link" href={{ url_for( 'index' ) }}>Home</a></li>
+						<li><a class="footer-link" href={{ url_for( 'exercises' ) }}>Exercises</a></li>
+						<li><a class="footer-link" href={{ url_for( 'stats' ) }}>Statistics</a></li>
+						<li><a class="footer-link" href={{ url_for( 'about' ) }}>About us</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
-</body>
-
+<!-- bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
 <!-- Materialize javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <!--jQuery to initialize select element in form, autoinit to initialize checkboxes -->
-<script>
-	$(document).ready(function() {
-        $('select').material_select();
-        M.AutoInit();
-    });
-</script>
+<script src="/static/js/autoinit.js"></script>
 
+</body>
 </html>
