@@ -2,177 +2,147 @@
 {% block title %} Add an exercise {% endblock %}
 {% block content %}
 
-<section>
-    <div class="container">
-        <div class="row">
-            <h1>Add your own exercise</h1>
-            <!-- form which, if submitted, adds exercise to the database -->
-            <form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data" class="col s12">
-                <div class="row">
-                <!-- name as input because it's a short text -->
-                    <div class="input-field col s12">
-                        <input id="name" name="name" type="text" class="validate">
-                        <label for="name">Exercise name</label>
-                    </div>
-                </div>
-                <div class="row">
-                <!-- description as text area because user might need to give a long explanation -->
-                    <div class="input-field col s12">
-                        <textarea id="description" name="description" class="materialize-textarea"></textarea>
-                        <label for="description">Exercise description</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <p>Type(s) of exercise, select option(s)</p>
-                </div>
-                <div class="row">
-                <!-- types of exercise as checkbox. Each checed checkbox sends this value to the database, all selected values are stored as array-->
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Technique" />
-                                <span>Technique</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Cue ball control" />
-                                <span>Cue ball control</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Potting ability" />
-                                <span>Potting ability</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Concentration" />
-                                <span>Concentration</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Safeties" />
-                                <span>Safeties</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Kicks" />
-                                <span>Kicks</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Banks" />
-                                <span>Banks</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="8-ball" />
-                                <span>8-ball</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="9-ball" />
-                                <span>9-ball</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="10-ball" />
-                                <span>10-ball</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Straight pool" />
-                                <span>Straight pool</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="col s6 m4 l2">
-                        <p>
-                            <label>
-                                <input type="checkbox" name="type_of_exercise" value="Special skills" />
-                                <span>Special skills</span>
-                            </label>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select id="skill_level" name="skill_level">
-                            <option value="" disabled selected>Choose option</option>
-                            <option value="Beginner">Beginner</option>
-                            <option value="Intermediate">Intermediate</option>
-                            <option value="Intermediate/Experienced">Intermediate/Experienced</option>
-                            <option value="Experienced">Experienced</option>
-                            <option value="Professional">Professional</option>
-                        </select>
-                        <label>Difficulty level</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="file-field input-field col s12">
-                        <div class="btn waves-effect waves-light">Upload Image<i class="material-icons right">file_upload</i>
-                            <input type="file" name="image">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                <!-- date added as string notation. In stats page, this number is taken. The highest number is the most
-                recently added exercise. -->
-                    <div class="input-field col s12">
-                        <input id="date_added" name="date_added" type="text" class="validate">
-                        <label for="date_added">Date(DD.MM.YYYY)</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="exercise_added_by" name="exercise_added_by" type="text" class="validate">
-                        <label for="exercise_added_by">Your name</label>
-                    </div>
-                </div>
-                <div class="row">
-                <!-- button submits the exercise to the database. -->
-                    <div class="col s12 col m6 add-cancel-button">
-                        <button class="btn waves-effect waves-light" type="submit">Add exercise to database<i class="material-icons right">send</i></button>
-                    </div>
-                    <!-- cancel button returns user to exercises.html without submitting the form to the database -->
-                    <div class="col s12 col m6 add-cancel-button">
-                        <button class="btn waves-effect waves-light cancel-button"><a href={{ url_for( 'exercises') }}>Cancel<i class="material-icons right">cancel</i></a></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+<div class="container-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 title">
+				<h2>Add your own exercise</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-grey">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 add-exercise-text">
+				<p>Fill out the form below to add your exercise to our database.</p>
+			</div>
+			<div class="col-12 add-exercise-form">
+				<!-- form which, if submitted, adds exercise to the database -->
+				<form action="{{ url_for('submit_exercise') }}" method='POST' enctype="multipart/form-data">
+					<div class="row">
+						<!-- name as input because it's a short text -->
+						<div class="col-12 input-field">
+							<input id="name" name="name" type="text" class="validate">
+							<label for="name">Exercise name</label>
+						</div>
+					</div>
+					<div class="row">
+						<!-- description as text area because user might need to give a long explanation -->
+						<div class="col-12 input-field">
+							<textarea id="description" name="description" class="materialize-textarea"></textarea>
+							<label for="description">Exercise description</label>
+						</div>
+					</div>
+					<div class="row">
+						<p class='exercise-type-lable'>Type(s) of exercise, select option(s)</p>
+					</div>
+					<div class="row">
+						<!-- types of exercise as checkbox. Each checed checkbox sends this value to the database, all selected values are stored as array-->
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Technique" value="Technique"/>
+							<label class="form-check-label" for="Technique">Technique</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Cue-ball-control" value="Cue ball control" />
+							<label class="form-check-label" for="Cue-ball-control">Cue ball control</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Potting-ability" value="Potting ability" />
+							<label class="form-check-label" for="Potting-ability">Potting ability</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Concentration" value="Concentration" />
+							<label class="form-check-label" for="Concentration">Concentration</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Safeties" value="Safeties" />
+							<label class="form-check-label" for="Safeties">Safeties</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Kicks" value="Kicks" />
+							<label class="form-check-label" for="Kicks">Kicks</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Banks" value="Banks" />
+							<label class="form-check-label" for="Banks">Banks</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="8-ball" value="8-ball" />
+							<label class="form-check-label" for="8-ball">8-ball</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="9-ball" value="9-ball" />
+							<label class="form-check-label" for="9-ball">9-ball</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="10-ball" value="10-ball" />
+							<label class="form-check-label" for="10-ball">10-ball</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Straight-pool" value="Straight pool" />
+							<label class="form-check-label" for="Straight-pool">Straight pool</label>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3 type-checkbox">
+							<input type="checkbox" name="type_of_exercise" id="Special-skills" value="Special skills" />
+							<label class="form-check-label" for="Special-skills">Special skills</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 input-field">
+							<select id="skill_level" name="skill_level">
+                                <option value="" disabled selected>Choose option</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Intermediate/Experienced">Intermediate/Experienced</option>
+                                <option value="Experienced">Experienced</option>
+                                <option value="Professional">Professional</option>
+                            </select>
+							<label>Difficulty level</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 file-field input-field">
+							<div class="waves-effect waves-light btn btn-add upload-image-btn add-exerc-button">
+                                <p>Upload Image<i class="material-icons right">file_upload</i></p>
+                                <input type="file" name="image">
+                            </div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text">
+                            </div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- date added as string notation. In stats page, this number is taken. The highest number is the most
+                        recently added exercise. -->
+						<div class="col-12 input-field">
+							<input id="date_added" name="date_added" type="text" class="validate">
+							<label for="date_added">Date(DD.MM.YYYY)</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 input-field">
+							<input id="exercise_added_by" name="exercise_added_by" type="text" class="validate">
+							<label for="exercise_added_by">Your name</label>
+						</div>
+					</div>
+					<div class="row">
+						<!-- button submits the exercise to the database. -->
+						<div class="col-12">
+							<button class="btn waves-effect waves-light filter-button add-cancel-button add-exerc-button" type="submit">
+                                Add exercise to database<i class="material-icons right">send</i>
+                            </button>
+							<!-- cancel button returns user to exercises.html without submitting the form to the database -->
+							<a href={{ url_for( 'exercises' ) }}
+								class="btn waves-effect waves-light filter-button cancel-button add-cancel-button-red add-exerc-button">
+                                Cancel<i class="material-icons right">cancel</i>
+                            </a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
