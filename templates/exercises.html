@@ -8,8 +8,9 @@
 			<div class="col-12 add-exercise-link">
 				<h5>Add your own exercise to the database</h5>
 				<!-- link to add.html -->
-				<a href={{ url_for( 'add') }} class="waves-effect waves-light btn btn-add">Add
-					exercise<i class="material-icons right">add_box</i></button></a>
+				<a href={{ url_for( 'add' ) }} class="waves-effect waves-light btn btn-add">Add
+					exercise<i class="material-icons right">add_box</i>
+                </a>
 			</div>
 		</div>
 	</div>
@@ -18,7 +19,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 title">
-				<h1>Exercises</h1>
+				<h2>Exercises</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -28,27 +29,29 @@
 					<div class="row">
 						<div class="col-12 col-md-6 input-field">
 							<select id="type_filter" name="type_filter" value="type_filter">
-                            <option value="" disabled selected>Filter exercises by skill type.</option>
-                            <option value="Technique">Technique</option>
-                            <option value="Cue ball control">Cue ball control</option>
-                            <option value="Potting ability">Potting ability</option>
-                            <option value="Concentration">Concentration</option>
-                            <option value="Safeties">Safeties</option>
-                            <option value="Kicks">Kicks</option>
-                            <option value="Banks">Banks</option>
-                            <option value="8-ball">8-ball</option>
-                            <option value="9-ball">9-ball</option>
-                            <option value="10-ball">10-ball</option>
-                            <option value="Straight pool">Straight pool</option>
-                            <option value="Special skills">Special skills</option>
-                        </select>
+                                <option value="" disabled selected>Filter exercises by skill type.</option>
+                                <option value="Technique">Technique</option>
+                                <option value="Cue ball control">Cue ball control</option>
+                                <option value="Potting ability">Potting ability</option>
+                                <option value="Concentration">Concentration</option>
+                                <option value="Safeties">Safeties</option>
+                                <option value="Kicks">Kicks</option>
+                                <option value="Banks">Banks</option>
+                                <option value="8-ball">8-ball</option>
+                                <option value="9-ball">9-ball</option>
+                                <option value="10-ball">10-ball</option>
+                                <option value="Straight pool">Straight pool</option>
+                                <option value="Special skills">Special skills</option>
+                            </select>
 						</div>
 						<div class="col-12 col-md-6 filter-buttons">
 							<!-- Button submits the filter form -->
-							<button class="btn waves-effect waves-light filter-button" type="submit">Filter<i class="material-icons right">filter_list</i></button>
+							<button class="btn waves-effect waves-light filter-button" type="submit">
+                            Filter<i class="material-icons right">filter_list</i></button>
 							<!-- undo filter; renders exercises template without any filter. So all exercises are shown again. -->
-							<a href={{ url_for( 'exercises') }}
-								class="btn waves-effect waves-light filter-button cancel-button">Undo<i class="material-icons right">undo</i></a>
+							<a href={{ url_for( 'exercises' ) }}
+								class="btn waves-effect waves-light filter-button cancel-button">Undo<i class="material-icons right">undo</i>
+                            </a>
 						</div>
 					</div>
 				</form>
@@ -56,51 +59,51 @@
 		</div>
 	</div>
 </div>
-
 <div class="container-white">
 	<div class="container">
 		<div class="row">
 			{% for exercise in exercises %}
-			<!-- for loop to iterate through all exercises in the database and display them
-        one by one in the container. Each key has an if statement which checks if there's a value 
-        for this key in the database. If not, a default value is displayed. -->
-			<div class="col-12 col-md-6 exercises-container">
-				<div class="exercises-container-body">
-					{% if exercise.name %}
-					<h4>{{exercise.name}}</h4>
-					{% else %}
-					<h4><i>Nameless exercise</i></h4>
-					{% endif %}
-					<h6><strong>Type of exercise</strong></h6>
-					{% if exercise.type_of_exercise %}
-					<!-- types of exercise are returned in an array, this function takes 
-                    the values out of the array and returns them as a list seperated by , -->
-					<p>{{', '.join(exercise.type_of_exercise)}}</p>
-					{% else %}
-					<p><i>No type of exercise known</i></p>
-					{% endif %}
-					<h6><strong>Skill level</strong></h6>
-					{% if exercise.skill_level %}
-					<p>{{exercise.skill_level}}</p>
-					{% else %}
-					<p><i>No skill level known</i></p>
-					{% endif %}
-					<div>
-						{% if exercise.image %}
-						<img class="small-img" src="{{exercise.image}}">
-                    {% else %}
-						<img class="small-img" src="/static/images/noimage.jpg" alt="no exercise image found">
-                    {% endif %}
+                <!-- for loop to iterate through all exercises in the database and display them
+                one by one in the container. Each key has an if statement which checks if there's a value 
+                for this key in the database. If not, a default value is displayed. -->
+                <div class="col-12 col-md-6 exercises-container">
+                    <div class="exercises-container-body">
+                        {% if exercise.name %}
+                            <h4>{{exercise.name}}</h4>
+                        {% else %}
+                            <h4><i>Nameless exercise</i></h4>
+                        {% endif %}
+                        <h6><strong>Type of exercise</strong></h6>
+                        {% if exercise.type_of_exercise %}
+                            <!-- types of exercise are returned in an array, this function takes 
+                            the values out of the array and returns them as a list seperated by , -->
+                            <p>{{', '.join(exercise.type_of_exercise)}}</p>
+                        {% else %}
+                            <p><i>No type of exercise known</i></p>
+                        {% endif %}
+                        <h6><strong>Skill level</strong></h6>
+                        {% if exercise.skill_level %}
+                            <p>{{exercise.skill_level}}</p>
+                        {% else %}
+                            <p><i>No skill level known</i></p>
+                        {% endif %}
+                        <div>
+                            {% if exercise.image %}
+                                <img class="small-img" src="{{exercise.image}}" alt="Exercise layout displayed on pool table">
+                            {% else %}
+                                <img class="small-img" src="/static/images/noimage.jpg" alt="no exercise image found">
+                            {% endif %}
+                        </div>
+                        <!-- link to viewexercise which displays all information on this exercise -->
+                        <a href="{{url_for('view_exercise', exercise_id=exercise._id)}}"
+                            class="waves-effect waves-light btn btn-add btn-view">View whole
+                            exercise<i class="material-icons right">pageview</i>
+                        </a>
                     </div>
-					<!-- link to viewexercise which displays all information on this exercise -->
-					<a href="{{url_for('view_exercise', exercise_id=exercise._id)}}"
-						class="waves-effect waves-light btn btn-add">View whole
-						exercise<i class="material-icons right">pageview</i></button></a>
-				</div>
-			</div>
+                </div>
 			{% endfor %}
 		</div>
 	</div>
 </div>
 
-	{% endblock %}
+{% endblock %}

@@ -1,65 +1,77 @@
 {% extends 'base.html' %}
 {% block title %} {{ exercise.name }} {% endblock %}
 {% block content %}
-<section>
-	<div class="container">
-    <!-- each part has in if statement to check if the key has a given value.
-    If not, a default value is displayed.-->
+<div class="container-white">
+	<div class="container view-exercise">
+        <!-- each part has in if statement to check if the key has a given value.
+        If not, a default value is displayed.-->
 		<div class="row">
-            {% if exercise.name %}
-			<h1>{{exercise.name}}</h1>
-            {% else %}
-            <h1>No exercise name given</h1>
-            {% endif %}
-			{% if exercise.image %}
-			<img class="small-img image-view" src="{{exercise.image}}">
-            {% else %}
-            <img class="small-img" src="/static/images/noimage.jpg" alt="no exercise image found">
-            {% endif %}
-			<h5>Exercise description</h5> 
-            {% if exercise.description %}
-            {{exercise.description}}
-            {% else %}
-            No exercise description given
-            {% endif %}
-			<h5>Type of exercise</h5>
-            {% if exercise.type_of_exercise %}
-            <!-- types of exercise are returned in an array, this function takes 
-            the values out of the array and returns them as a list seperated by , -->
-            {{', '.join(exercise.type_of_exercise)}}
-            {% else %}
-            No type of exercise given
-            {% endif %}
-			<h5>Skill level</h5>
-            {% if exercise.skill_level %}
-            {{exercise.skill_level}}
-            {% else %}
-            No skill level given
-            {% endif %}
-			<h5>Exercise added by</h5>
-            {% if exercise.exercise_added_by %}
-            {{exercise.exercise_added_by}}
-            {% else %}
-            Not known who added the exercise
-            {% endif %}
+            <div class="col-12 view-exercise-title">
+                {% if exercise.name %}
+			        <h2>{{exercise.name}}</h2>
+                {% else %}
+                    <h2>No exercise name given</h2>
+                {% endif %}
+            </div>
+		</div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-xl-3 offset-xl-3 type-of-exercise">
+                <h5>Type of exercise</h5>
+                {% if exercise.type_of_exercise %}
+                    <!-- types of exercise are returned in an array, this function takes 
+                    the values out of the array and returns them as a list seperated by , -->
+                    <p>{{', '.join(exercise.type_of_exercise)}}</p>
+                {% else %}
+                    <p>No type of exercise given</p>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 skill-level">
+                <h5>Skill level</h5>
+                {% if exercise.skill_level %}
+                    <p>{{exercise.skill_level}}</p>
+                {% else %}
+                    <p>No skill level given</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {% if exercise.image %}
+			        <img class="small-img image-view" src="{{exercise.image}}" alt="Exercise layout displayed on table">
+                {% else %}
+                    <img class="small-img" src="/static/images/noimage.jpg" alt="no exercise image found">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h5>Exercise description</h5> 
+                {% if exercise.description %}
+                    <p>{{exercise.description}}</p>
+                {% else %}
+                    <p>No exercise description given</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h5>Exercise added by</h5>
+                {% if exercise.exercise_added_by %}
+                    <p>{{exercise.exercise_added_by}}</p>
+                {% else %}
+                    <p>Not known who added the exercise</p>
+                {% endif %}
+            </div>
         </div>
 		<div class="row">
-			<div class="row col s12 col m6 add-cancel-button">
-				<div>
-                <!-- button which links to edit exercise page. All values from this exercise are taken to this page-->
-					<a href="{{url_for('edit_exercise', exercise_id=exercise._id)}}"
-							class="waves-effect waves-light btn">Edit
-							exercise<i class="material-icons right">edit</i></a>
-				</div>
-			</div>
-			<div class="row col s12 col m6 add-cancel-button">
-            <!-- button returns user to exercises overview-->
-				<div>
-					<div class="btn waves-effect waves-light cancel-button"><a href={{ url_for('exercises') }}>Back to exercises<i class="material-icons right">keyboard_return</i></a></div>
-				</div>
-			</div>
+            <div class="col-12">
+                <a href="{{url_for('edit_exercise', exercise_id=exercise._id)}}" class="btn waves-effect waves-light filter-button add-cancel-button">
+                Edit exercise<i class="material-icons right">edit</i></a>
+                <a href={{ url_for( 'exercises' ) }} class="btn waves-effect waves-light filter-button cancel-button add-cancel-button">
+                Back to exercises<i class="material-icons right">keyboard_return</i></a>
+            </div>
 		</div>
 	</div>
-</section>
+</div>
 
 {% endblock %}
