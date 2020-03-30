@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from base64 import b64encode
@@ -50,7 +50,17 @@ def submit_exercise():
     # insert document in database with button in add.html
     exercises.insert_one(values)
     # return to exercises page
-    return redirect(url_for('exercises'))
+
+    # name = request.form.get("name")
+
+    # if not len(name) > 1:
+    #     flash("Please submit a name for the exercise.")
+    #     return redirect(request.url)
+
+    # flash("Exercise succesfully submitted to the database!")
+    # return redirect(request.url)
+
+    # return render_template(url_for('exercises'))
 
 # exercises.html #########################
 
@@ -128,7 +138,7 @@ def update_exercise(exercise_id):
         # keep using existing image if no new image is given
         exercise['image'] = existing_exercise['image']
     # add document to database with form
-    exercises.update({"_id": ObjectId(exercise_id)}, exercise)
+    exercises.replace_one({"_id": ObjectId(exercise_id)}, exercise)
     # redirect to exercises page after updating exercises
     return redirect(url_for('exercises'))
 
@@ -164,6 +174,11 @@ def stats():
 
 # opens port for browser
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=os.environ.get("PORT"),
-            debug=False)
+    app.run(host="0.0.0.0",
+            port=int("8080"),
+            debug=True)
+
+# if __name__ == "__main__":
+    # app.run(host=os.environ.get("IP"),
+    #         port=os.environ.get("PORT"),
+    #         debug=False)
