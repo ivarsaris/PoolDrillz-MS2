@@ -47,24 +47,37 @@
 		</div>
 	</nav>
 
-    <div class="container">
-        {% with messages = get_flashed_messages() %}
+    <!-- Flash messages are displayed here, if alert is success, green container.
+    if warning, orange container -->
+    {% with messages = get_flashed_messages(category_filter=["success"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row">
+                    <div class="col-12 alert-message">
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
-            {% if messages %}
-
-                {% for message in messages %}
-
-                    {{ message }}
-
-                {% endfor %}
-
-            {% endif %}
-
-        {% endwith %}
-    </div>
-
+    {% with messages = get_flashed_messages(category_filter=["warning"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row">
+                    <div class="col-12 alert-message">
+                        <div class="alert alert-warning" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
 	<!-- content to be copied on all pages -->
-
     <main>
         {% block content %}
 	    {% endblock %}

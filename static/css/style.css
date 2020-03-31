@@ -179,6 +179,18 @@ extremely small screens */
     }
 }
 
+/* alert messages */
+
+.alert-message {
+    text-align: center;
+}
+
+.alert {
+    margin-top: 1em;
+    color: black;
+    font-size: 1.5em;
+}
+
 /************ index.html **************/
 
 .home-title {
