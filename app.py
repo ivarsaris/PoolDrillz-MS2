@@ -141,7 +141,7 @@ def filter_exercises():
     and display message
     """
     doc = exercises.find({'type_of_exercise': type_filter})
-    if doc.count() == 0:
+    if doc.count_documents({}) == 0:
         flash("No exercises of this type", "warning")
         return redirect(url_for('exercises'))
 
@@ -225,7 +225,7 @@ def delete_exercise(exercise_id):
 @app.route('/stats')
 def stats():
     exercises = mongo.db.exercises
-    amount_of_exercises = exercises.count()
+    amount_of_exercises = exercises.count_documents({})
     """
     sort exercises by date added, return in ascending order.
     find exercise last added
