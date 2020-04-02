@@ -141,7 +141,8 @@ def filter_exercises():
     and display message
     """
     doc = exercises.find({'type_of_exercise': type_filter})
-    if doc.count_documents({}) == 0:
+    # using doc.count_documents will return error, so using this method.
+    if exercises.count_documents({'type_of_exercise': type_filter}) == 0:
         flash("No exercises of this type", "warning")
         return redirect(url_for('exercises'))
 
