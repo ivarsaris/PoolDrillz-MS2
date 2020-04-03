@@ -9,7 +9,7 @@ html {
 
 body {
     height: 100%;
-    font-family: Helvetica;
+    font-family: 'Helvetica';
     /* set margin so content can't
     go behind footer */
     margin: 0 0 140px;
@@ -301,6 +301,7 @@ img.responsive-img {
     color: white;
     transition: 0.5s;
     width: 140px;
+    padding: 0 1rem;
 }
 
 .filter-button:hover {
