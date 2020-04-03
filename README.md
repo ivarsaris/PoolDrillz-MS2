@@ -149,7 +149,10 @@ When a user filters the exercises by a skill type which has no exercises in the 
 page is reloaded and a message is displayed stating there are no exercises of this type in the database.
 
 When a user submitted a new exercise or made changes to an existing one, no feedback was given. I added a feedback message so the user knows if an exercise 
-was successfully submitted or edited. 
+was successfully submitted or edited.
+
+Upon deployment, the magnifying glass icon on the "view whole exercise" button on the exercises doesn't display on certain screen sizes. It does display properly
+in the preview. When opening dev tools, I see that the padding in the btn-view class doesn't load. I have no idea how to fix this.
 
 ### Responsiveness
 
