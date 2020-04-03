@@ -55,7 +55,7 @@ on top of the screen. The navbar collapses on smaller screens, so it doesn't tak
 The footer is stuck to the bottom, so it doesn't take up screen space when the user is scrolling through a page.
 
 I started with blue(#0875c3) and orange(#FFA400) as the only colours used in the application. After a while, I decided that it was a little boring
-and I wanted to add some more colours. I checked my favourite colour website [colour-hex](https://www.colour-hex.com/) to see which 
+and I wanted to add some more colours. I checked my favourite colour website [color-hex](https://www.colour-hex.com/) to see which 
 colours compliment orange and blue. Pink( #ff005b), and light green(#00ffa4) were recommended. I used these colours throughout the 
 application. I also made the background of certain sections and of the exercise columns grey. I did this because I thought the whole
 application was looking a little white.
