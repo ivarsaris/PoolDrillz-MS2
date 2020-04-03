@@ -237,15 +237,9 @@ def stats():
     return render_template('stats.html', amount_of_exercises=amount_of_exercises,
                            last_aded_exerc=last_aded_exerc)
 
-
 # opens port for browser
 if __name__ == "__main__":
-    app.secret_key = 'pooldrillzqwerty'
-    app.run(host="0.0.0.0",
-            port=int("8080"),
-            debug=True)
-
-# if __name__ == "__main__":
-    # app.run(host=os.environ.get("IP"),
-    #         port=os.environ.get("PORT"),
-    #         debug=False)
+    app.secret_key = os.environ.get("secret_key")
+    app.run(host=os.environ.get("IP"),
+            port=os.environ.get("PORT"),
+            debug=False)
