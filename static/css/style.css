@@ -357,12 +357,13 @@ img.responsive-img {
     background-color: #FFA400;
     max-width: 90%;
     margin-left: 5%;
+    padding: 0 1rem;
 }
 
 /* "view whole exercise" doesn't fit on 
 very small screen. This way, the user
 can see the whole text */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 329px) {
     .btn-view {
         height: 5em;
     }
