@@ -362,7 +362,7 @@ img.responsive-img {
 
 /* "view whole exercise" doesn't fit on 
 very small screen. This way, the user
-can see the whole text */
+can see the whole text(without icon) */
 @media screen and (max-width: 329px) {
     .btn-view {
         height: 5em;
