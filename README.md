@@ -11,7 +11,7 @@ The user can:
 - Add a new exercise
 - Delete an exercise
 
-The idea came to me because I'm a semi professional pool player. And for pool players, there is no clear path to
+The idea came to me because I'm a semi-professional pool player. And for pool players, there is no clear path to
 becoming a better player. There are many exercises and ideas floating around, but there's no clear overview. 
 My eventual goal for PoolDrillz is for it to become an online community of pool players and trainers where information
 is easily accessible and pool players of each level can find the right exercises for them based on which area of their 
@@ -38,10 +38,10 @@ Before starting to build the application. I wrote user stories so I knew which f
 
 [User stories](userstories.md)
 
-### Mockup
+### Mock-up
 
-I created a [mockup](https://ivarsaris.wixsite.com/pooldrillz) using Wix. I did this to decide how to style the application.
-The layout of the mockup adapts to both desktop and mobile. For some reason, the mockup isn't responsive when using
+I created a [mock-up](https://ivarsaris.wixsite.com/pooldrillz) using Wix. I did this to decide how to style the application.
+The layout of the mock-up adapts to both desktop and mobile. For some reason, the mock-up isn't responsive when using
 chrome developer tools using the device toolbar. However, the layout is responsive on a mobile phone.
 
 ### Design
@@ -55,12 +55,12 @@ on top of the screen. The navbar collapses on smaller screens, so it doesn't tak
 The footer is stuck to the bottom, so it doesn't take up screen space when the user is scrolling through a page.
 
 I started with blue(#0875c3) and orange(#FFA400) as the only colours used in the application. After a while, I decided that it was a little boring
-and I wanted to add some more colours. I checked my favourite colour website [color-hex](https://www.color-hex.com/) to see which 
-colors compliment orange and blue. Pink( #ff005b), and light green(#00ffa4) were recommended. I used these colours throughout the 
-application. I also made the background of certain sections and of the exercise colums grey. I did this because I thought the whole
+and I wanted to add some more colours. I checked my favourite colour website [colour-hex](https://www.colour-hex.com/) to see which 
+colours compliment orange and blue. Pink( #ff005b), and light green(#00ffa4) were recommended. I used these colours throughout the 
+application. I also made the background of certain sections and of the exercise columns grey. I did this because I thought the whole
 application was looking a little white.
 
-I placed all forms in the center of the page. This because the forms are the most important part of the page. The attention 
+I placed all forms in the centre of the page. This because the forms are the most important part of the page. The attention 
 needs to go there immediately. The same goes for the exercise information in the viewexercise template. The user can go straight back to the
 exercises page from the viewexercise and editexercise template with a button.
 
@@ -86,7 +86,7 @@ The application has been made using the following Technologies:
 
 I made the backed functionalities before I added the styling. I started with the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template)
 for working in Gitpod. I created a repository in GitHub and linked this to the template. I had debug set to True throughout the development process. I changed it to false 
-upon deployment in order to make sure no sensitive data could be retreived. I set my sensitive environment variables in Heroku settings, so they can't be retreived.
+upon deployment in order to make sure no sensitive data could be retrieved. I set my sensitive environment variables in Heroku settings, so they can't be retrieved.
 
 ## Features
 
@@ -140,7 +140,7 @@ I tested all parts of the application manually.
 I found it was easy to submit wrong information in the add exercise form. I implemented some defensive design 
 in order to avoid this as much as possible. For example, I added a date picker, so the date format is always correct. This also ensures that the real latest added exercise
 is displayed on the statistics page. When a user enters a name that's less than 3 or more than 30 characters, the add exercise page is reloaded with a warning message. The same goes 
-if the user doesn't add a description, dificulty level, or skill type.
+if the user doesn't add a description, difficulty level, or skill type.
 
 When a user clicks the delete button on the editexercise page, a pop up appears asking the user to confirm the deleting of the exercise. I did this to ensure no exercises
 are deleted by accident.
@@ -148,8 +148,8 @@ are deleted by accident.
 When a user filters the exercises by a skill type which has no exercises in the database, an empty exercises page returned. I made sure when this happens, the exercises 
 page is reloaded and a message is displayed stating there are no exercises of this type in the database.
 
-When a user submitted a new exercise or made changes to an exising one, no feedback was gived. I added a feedback message so the user knows if an exercise 
-was succesfully submitted or edited. 
+When a user submitted a new exercise or made changes to an existing one, no feedback was given. I added a feedback message so the user knows if an exercise 
+was successfully submitted or edited. 
 
 ### Responsiveness
 
@@ -158,9 +158,9 @@ applications is responsive to all screen sizes and devices types. I have also ru
 and checked many different devices. This to make sure the application looks good on all of them. I ensured the application
 looks good on all devices from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
 
-**Mobile** - Honor 10, Iphone 4, 7, and 10, and Samsung galaxy s9
+**Mobile** - Honor 10, hone 4, iPhone7, and 10, and Samsung galaxy s9
 
-**Tablet** - Ipad pro
+**Tablet** - iPad pro
 
 **Desktop** - Lenovo 14 inch laptop, HP 15.6 inch laptop, and a 27 inch monitor 
 
