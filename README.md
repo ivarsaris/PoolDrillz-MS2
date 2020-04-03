@@ -17,11 +17,15 @@ My eventual goal for PoolDrillz is for it to become an online community of pool 
 is easily accessible and pool players of each level can find the right exercises for them based on which area of their 
 game they want to improve on.
 
+## Demo
+
+[LIVE APPLICATION](https://pooldrillz.herokuapp.com/)
+
+The application is hosted on Heroku.
+
 ![Image of PoolDrillz](/static/images/readmeimage.png)
 
-LIVE APPLICATION (LINK)
-
-## UX and UI
+## UX
 
 ### Users
 
@@ -34,31 +38,55 @@ Before starting to build the application. I wrote user stories so I knew which f
 
 [User stories](userstories.md)
 
+### Mockup
+
+I created a [mockup](https://ivarsaris.wixsite.com/pooldrillz) using Wix. I did this to decide how to style the application.
+The layout of the mockup adapts to both desktop and mobile. For some reason, the mockup isn't responsive when using
+chrome developer tools using the device toolbar. However, the layout is responsive on a mobile phone.
+
 ### Design
 
 PoolDrillz is a simply designed application. The main purpose of this project was to build an application that connects to 
-a database. The user can use this application to perform C.R.U.D. operations. 
+a database. The user can use this application to perform C.R.U.D. operations.
 
-#### Navigation
+The main pages of the application can be accessed with one click from anywhere in the application. The links
+are found in the navbar on top of the screen, and in the footer. I choose to use a sticky navbar, so it's always displayed 
+on top of the screen. The navbar collapses on smaller screens, so it doesn't take up too much space. The user doesn't need to scroll up to the top to navigate to another page. 
+The footer is stuck to the bottom, so it doesn't take up screen space when the user is scrolling through a page.
 
-All pages of the application can be accessed with one click from anywhere in the application. On larger screens, the links
-are found in the navbar on top of the screen, and in the footer. On smaller screen only in the footer. I choose this 
-because to have both a footer and a navbar at the top showing would take up too much screen space.
+I started with blue(#0875c3) and orange(#FFA400) as the only colours used in the application. After a while, I decided that it was a little boring
+and I wanted to add some more colours. I checked my favourite colour website [color-hex](https://www.color-hex.com/) to see which 
+colors compliment orange and blue. Pink( #ff005b), and light green(#00ffa4) were recommended. I used these colours throughout the 
+application. I also made the background of certain sections and of the exercise colums grey. I did this because I thought the whole
+application was looking a little white.
 
-#### Color
-
-Neat colors that don't distract. This was my principle thought when choosing the color scheme for this application. I 
-didn't want the colors to distract from the content and layout. It had to look classy and clear. For this reason, I choose
-the following colors. The navigation bar and footer are dark blue (#393a4c). The add exercise button has the same color. 
-The other buttons are standard blue and red from Materialize. All text on the white background is black. All other text is white. 
-
-#### Font 
+I placed all forms in the center of the page. This because the forms are the most important part of the page. The attention 
+needs to go there immediately. The same goes for the exercise information in the viewexercise template. The user can go straight back to the
+exercises page from the viewexercise and editexercise template with a button.
 
 I used Helvetica as font throughout the application. This for the simple reason that it's easy to read, and it looks neat as well. 
 
-### Mockup
+## Technologies used
 
-I created a mockup using [Wix](https://ivarsaris.wixsite.com/pooldrillz)
+The application has been made using the following Technologies:
+
+* **HTML5** - Coding language used for creating the content and structure of the website
+* **CSS** - Coding language used for styling the content
+* **Python3** - Dynamic, object oriented programming language
+* **Flask** - Open source Python framework used for building web applications
+* **jQuery** - Used to simplify JavaScript for display purposes
+* **MongoDB** - Online open source document oriented database
+* **Google Chrome** - Used as browser and for developer tools
+* [**Materialize**](https://materializecss.com/) - Framework library used for display, styling and icons
+* **Git** - Used for version control
+* [**Github**](https://github.com/) - Used to host the repository for the application
+* [**Heroku**](https://www.heroku.com/) - Used to deploy the application
+
+## Development process
+
+I made the backed functionalities before I added the styling. I started with the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template)
+for working in Gitpod. I created a repository in GitHub and linked this to the template. I had debug set to True throughout the development process. I changed it to false 
+upon deployment in order to make sure no sensitive data could be retreived. I set my sensitive environment variables in Heroku settings, so they can't be retreived.
 
 ## Features
 
@@ -92,45 +120,7 @@ That I would like to add are the following:
 * A high score table. Users can input their high score of an exercise, to create competition.
 * Exercise review. Users can give a star rating to an exercise. The average of all ratings is displayed next to the exercise.
 
-** Technologies used
-
-The application has been made using the following Technologies:
-
-* **HTML5** - Coding language used for creating the content and structure of the website
-* **CSS** - Coding language used for styling the content
-* **Python3** - Dynamic, object oriented programming language
-* **Flask** - Open source Python framework used for building web applications
-* **jQuery** - Used to simplify JavaScript for display purposes
-* **MongoDB** - Online open source document oriented database
-* **Google Chrome** - Used as browser and for developer tools
-* [**Materialize**](https://materializecss.com/) - Framework library used for display, styling and icons
-* **Git** - Used for version control
-* [**Github**](https://github.com/) - Used to host the repository for the application
-* [**Heroku**](https://www.heroku.com/) - Used to deploy the application
-
 ## Testing
-
-The application achieves the goal set out. Users can create, read, update and delete exercises from the database.
-They can filter the exercises by type of exercise. The user can direct to any page of the application
-with one click from anywhere. 
-
-### Responsiveness
-
-I have used Chrome developer tools during the whole process of building the application. This to make sure the 
-applications is responsive to all screen sizes and devices types. I have also run the application through https://responsivedesignchecker.com/
-and checked many different devices. This to make sure the application looks good on all of them. I ensured the application
-looks good on all devices from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
-
-**Mobile** - Honor 10, Iphone 4, 7, and 10, and Samsung galaxy s9
-
-**Tablet** - Ipad pro
-
-**Desktop** - Lenovo 14 inch laptop, HP 15.6 inch laptop, and a 27 inch monitor 
-
-On some devices, the spacing between some buttons doesn't look very neat. With more time, this could easily be fixed. 
-But because the main purpope of this applications is the functionality, I decided to spend my time focusing on that.
-
-### User interaction
 
 I tested all parts of the application manually.
 
@@ -147,6 +137,35 @@ I tested all parts of the application manually.
 * A user can cancel making changes to an exercise. The exercise stays in the database with its original values.
 * A user can delete an exercise. Before it's deleted, the user will see a pop up in which he has to confirm deleting this exercise.
 
+I found it was easy to submit wrong information in the add exercise form. I implemented some defensive design 
+in order to avoid this as much as possible. For example, I added a date picker, so the date format is always correct. This also ensures that the real latest added exercise
+is displayed on the statistics page. When a user enters a name that's less than 3 or more than 30 characters, the add exercise page is reloaded with a warning message. The same goes 
+if the user doesn't add a description, dificulty level, or skill type.
+
+When a user clicks the delete button on the editexercise page, a pop up appears asking the user to confirm the deleting of the exercise. I did this to ensure no exercises
+are deleted by accident.
+
+When a user filters the exercises by a skill type which has no exercises in the database, an empty exercises page returned. I made sure when this happens, the exercises 
+page is reloaded and a message is displayed stating there are no exercises of this type in the database.
+
+When a user submitted a new exercise or made changes to an exising one, no feedback was gived. I added a feedback message so the user knows if an exercise 
+was succesfully submitted or edited. 
+
+### Responsiveness
+
+I have used Chrome developer tools during the whole process of building the application. This to make sure the 
+applications is responsive to all screen sizes and devices types. I have also run the application through https://responsivedesignchecker.com/
+and checked many different devices. This to make sure the application looks good on all of them. I ensured the application
+looks good on all devices from 320px width(smallest mobile device) and up. I also tested the application responsiveness manually on the following devices:
+
+**Mobile** - Honor 10, Iphone 4, 7, and 10, and Samsung galaxy s9
+
+**Tablet** - Ipad pro
+
+**Desktop** - Lenovo 14 inch laptop, HP 15.6 inch laptop, and a 27 inch monitor 
+
+### User interaction
+
 ### Browser compatibility
 
 I ran the application in several browsers to make sure it's compatible with the most common ones. The application runs
@@ -154,7 +173,7 @@ well in Google Chrome, Mozilla Firefox, and Safari.
 
 ### Code validation
 
-I ran the code through several validators to make sure there are no mistakes. The HTML validators don't take Flask into account,
+I ran the code through several validators to make sure there are no mistakes. The HTML validators don't take Jinja template language into account,
 so several errors were returned. I checked them and these were not mistakes.
 
 **HTML5**
@@ -175,7 +194,7 @@ https://extendsclass.com/python-tester.html
 
 http://pep8online.com/
 
-## Deployment
+## Installation
 
 ### Local Deployment
 
@@ -220,6 +239,8 @@ All content and functionality in the application was written by me.
 Images were taken from Google or created by myself. I don’t own the copyright to any of the images.
 
 ### Acknowledgements
+
+I took a navbar and footer snippet from Bootstrap and adapted it to fit the application.
 
 I want to thanks Seun Owonikoko, my mentor, for her support and feedback. I also want to thank the tutors from Code Institute, 
 especially Michael, for their help. They taught me a lot and were very patient with me.
